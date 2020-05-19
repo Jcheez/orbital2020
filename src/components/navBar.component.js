@@ -5,9 +5,15 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <Link to="/" className="navbar-brand">
-          FERMS
-        </Link>
+        <div>
+          <Link to="/" className="navbar-brand">
+            FERMS
+            <span role="img" aria-label="house">
+              🏠
+            </span>
+          </Link>
+        </div>
+
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav mr-auto">
             <li className="navbar-item">
