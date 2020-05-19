@@ -22,8 +22,8 @@ class Navbar extends Component {
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/favourites" className="nav-link">
-                Favourites
+              <Link to="/latestRates" className="nav-link">
+                Latest Rates
               </Link>
             </li>
             <li className="navbar-item">

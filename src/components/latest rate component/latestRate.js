@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import Usdrate from "./newestRate";
 
-class favourites extends Component {
+class latestRate extends Component {
   state = {};
   render() {
     return (
       <div>
-        <p>This is the favourites component</p>
+        <Usdrate />
       </div>
     );
   }
 }
 
-export default favourites;
+export default latestRate;
