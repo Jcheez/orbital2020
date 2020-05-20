@@ -45,12 +45,16 @@ class dropdownbar extends Component {
     return (
       <div
         className="dropdownmenu"
-        style={{ background: "Cyan", width: "200px" }}
+        style={{
+          background: "#fff",
+          width: "200px",
+          border: "1px solid #ccc",
+          borderradius: "6px",
+        }}
       >
         <div className="button" onClick={this.showmenu}>
-          List of Currencies
+          List of Currencies ▼
         </div>
-
         {this.state.dropdown ? (
           <ul>
             <li>US Dollar</li>
