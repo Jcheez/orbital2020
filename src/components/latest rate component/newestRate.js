@@ -79,6 +79,24 @@ class usdrate extends Component {
   render() {
     return (
       <div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Currency</th>
+              <th scope="col">{this.state.Bank1}</th>
+              <th scope="col">{this.state.Bank2}</th>
+              <th scope="col">{this.state.Bank3}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USD</th>
+              <td>{this.state.rates1}</td>
+              <td>{this.state.rates2}</td>
+              <td>{this.state.rates3}</td>
+            </tr>
+          </tbody>
+        </table>
         <h4>
           {this.state.Bank1}: On {this.state.Date1}, One USD can be exchanged
           for {this.state.rates1} Singapore Dollars
