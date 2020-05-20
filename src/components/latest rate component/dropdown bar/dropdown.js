@@ -17,9 +17,62 @@ import Ntdrate from "../ntdrates";
 import Aedrate from "../aedRates";
 
 class dropdownbar extends Component {
-  state = {};
+  constructor() {
+    super();
+
+    this.state = {
+      dropdown: false,
+    };
+
+    this.showmenu = this.showmenu.bind(this);
+    this.closemenu = this.closemenu.bind(this);
+  }
+
+  showmenu(event) {
+    event.preventDefault();
+    this.setState({ dropdown: true }, () => {
+      document.addEventListener("click", this.closemenu);
+    });
+  }
+
+  closemenu() {
+    this.setState({ dropdown: false }, () => {
+      document.removeEventListener("click", this.closemenu);
+    });
+  }
+
   render() {
-    return <p>Dropdownbar comes here</p>;
+    return (
+      <div
+        className="dropdownmenu"
+        style={{ background: "Cyan", width: "200px" }}
+      >
+        <div className="button" onClick={this.showmenu}>
+          List of Currencies
+        </div>
+
+        {this.state.dropdown ? (
+          <ul>
+            <li>US Dollar</li>
+            <li>Euro</li>
+            <li>Sterling Pound</li>
+            <li>Japanese Yen</li>
+            <li>Chinese Renminbi</li>
+            <li>Australian Dollar</li>
+            <li>Canadian Dollar</li>
+            <li>New Zealand Dollar</li>
+            <li>Hong Kong Dollar</li>
+            <li>Swiss Franc</li>
+            <li>Malaysian Ringgit</li>
+            <li>Indonesian Rupiah</li>
+            <li>Thai Baht</li>
+            <li>Korean Won</li>
+            <li>New Taiwan Dollar</li>
+            <li>UAE Dirham</li>
+          </ul>
+        ) : null}
+      </div>
+    );
   }
 }
 
