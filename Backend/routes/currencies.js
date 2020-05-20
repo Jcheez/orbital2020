@@ -332,6 +332,7 @@ router.route("/NTD").get((req, res) => {
           $or: [
             { "rates.0.k": "New Taiwan Dollar" },
             { "rates.0.k": "NTD not found" },
+            { "rates.0.k": "TWD" },
           ],
         },
       },

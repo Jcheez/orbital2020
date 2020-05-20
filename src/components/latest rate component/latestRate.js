@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Usdrate from "./newestRate";
+import Dropdown from "./dropdown bar/dropdown";
 
 class latestRate extends Component {
   state = {};
   render() {
     return (
       <div>
-        <Usdrate />
+        <Dropdown />
       </div>
     );
   }

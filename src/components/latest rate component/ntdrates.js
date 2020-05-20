@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
 
-class usdrate extends Component {
+class ntdrate extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ class usdrate extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/USD")
+      .get("http://localhost:5000/currencies/NTD")
       .then((response) => {
         var today = new Date();
 
@@ -60,15 +60,30 @@ class usdrate extends Component {
           Date1: data_array[0].Date,
           Bank1: data_array[0].Bank,
           Timestamp1: data_array[0].Timestamp,
-          rates1: data_array[0].rates[0].v,
+          rates1:
+            typeof data_array[0].rates[0].v === "number"
+              ? (
+                  data_array[0].rates[0].v / data_array[0].rates[1].v
+                ).toPrecision(4)
+              : "Not Found",
           Date2: data_array[1].Date,
           Bank2: data_array[1].Bank,
           Timestamp2: data_array[1].Timestamp,
-          rates2: data_array[1].rates[0].v,
+          rates2:
+            typeof data_array[1].rates[0].v === "number"
+              ? (
+                  data_array[1].rates[0].v / data_array[1].rates[1].v
+                ).toPrecision(4)
+              : "Not Found",
           Date3: data_array[2].Date,
           Bank3: data_array[2].Bank,
           Timestamp3: data_array[2].Timestamp,
-          rates3: data_array[2].rates[0].v,
+          rates3:
+            typeof data_array[2].rates[0].v === "number"
+              ? (
+                  data_array[2].rates[0].v / data_array[2].rates[1].v
+                ).toPrecision(4)
+              : "Not Found",
         });
       })
       .catch((error) => {
@@ -90,28 +105,16 @@ class usdrate extends Component {
           </thead>
           <tbody>
             <tr>
-              <th scope="row">USD</th>
+              <th scope="row">NTD</th>
               <td>{this.state.rates1}</td>
               <td>{this.state.rates2}</td>
               <td>{this.state.rates3}</td>
             </tr>
           </tbody>
         </table>
-        <h4>
-          {this.state.Bank1}: On {this.state.Date1}, One USD can be exchanged
-          for {this.state.rates1} Singapore Dollars
-        </h4>
-        <h4>
-          {this.state.Bank2}: On {this.state.Date2}, One USD can be exchanged
-          for {this.state.rates2} Singapore Dollars
-        </h4>
-        <h4>
-          {this.state.Bank3}: On {this.state.Date3}, One USD can be exchanged
-          for {this.state.rates3} Singapore Dollars
-        </h4>
       </div>
     );
   }
 }
 
-export default usdrate;
+export default ntdrate;
