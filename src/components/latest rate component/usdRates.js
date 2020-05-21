@@ -76,7 +76,7 @@ class usdrate extends Component {
       });
   }
 
-  render(props) {
+  render() {
     return (
       <div>
         <table className="table table-bordered">
