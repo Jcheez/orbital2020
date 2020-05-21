@@ -76,10 +76,10 @@ class usdrate extends Component {
       });
   }
 
-  render() {
+  render(props) {
     return (
       <div>
-        <table class="table table-bordered">
+        <table className="table table-bordered">
           <thead>
             <tr>
               <th scope="col">Currency</th>
