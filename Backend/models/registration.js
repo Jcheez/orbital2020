@@ -12,8 +12,8 @@ const validation = function validateRegisterInput(data) {
     data.password = "";
   }
 
-  if (isEmpty(data.password2)) {
-    data.password2 = "";
+  if (isEmpty(data.confirmPassword)) {
+    data.confirmPassword = "";
   }
 
   if (validator.isEmpty(data.email)) {
@@ -26,12 +26,12 @@ const validation = function validateRegisterInput(data) {
     errors.password = "This field is required";
   }
 
-  if (validator.isEmpty(data.password2)) {
-    errors.password2 = "Please confirm your password";
+  if (validator.isEmpty(data.confirmPassword)) {
+    errors.confirmPassword = "Please confirm your password";
   }
 
-  if (validator.equals(data.password, data.password2) === false) {
-    errors.password2 = "Passwords do not match";
+  if (validator.equals(data.password, data.confirmPassword) === false) {
+    errors.confirmPassword = "Passwords do not match";
   }
 
   return {

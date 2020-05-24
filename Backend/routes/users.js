@@ -6,23 +6,23 @@ const validateLogin = require("../models/authenticate");
 const users = require("../models/usersModel");
 
 router.post("/signup", (req, res) => {
-  const { errors, validated } = validateRegistation(req.data);
+  const { errors, validated } = validateRegistation(req.body);
 
   if (validated === false) {
     return res.status(400).json(errors);
   }
 
-  users.find({ email: req.data.email }).then((email) => {
+  users.find({ email: req.body.email }).then((email) => {
     if (email === true) {
       return res.status(400).json("This email has been taken by another user");
     } else {
       const newUser = new users({
-        email: req.data.email,
-        password: req.data.password,
+        email: req.body.email,
+        password: req.body.password,
       });
       newUser
         .save()
-        .then((user) => res.json(user))
+        .then(() => res.json("User added"))
         .catch((err) => console.log(err));
     }
   });
