@@ -9,6 +9,7 @@ class usdrate extends Component {
       Date1: "",
       Bank1: "",
       Timestamp1: "",
+      timeRecorded: "",
       rates1: "",
       Date2: "",
       Bank2: "",
@@ -55,12 +56,12 @@ class usdrate extends Component {
             }
           }
         }
-
         this.setState({
           Date1: data_array[0].Date,
           Bank1: data_array[0].Bank,
           Timestamp1: data_array[0].Timestamp,
           rates1: data_array[0].rates[0].v / data_array[0].rates[1].v,
+          timeRecorded: data_array[0].timeRecorded,
           Date2: data_array[1].Date,
           Bank2: data_array[1].Bank,
           Timestamp2: data_array[1].Timestamp,
@@ -79,24 +80,31 @@ class usdrate extends Component {
   render() {
     return (
       <div>
-        <table className="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Currency</th>
-              <th scope="col">{this.state.Bank1}</th>
-              <th scope="col">{this.state.Bank2}</th>
-              <th scope="col">{this.state.Bank3}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">USD</th>
-              <td>{this.state.rates1}</td>
-              <td>{this.state.rates2}</td>
-              <td>{this.state.rates3}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div>
+          <p> </p>
+          Last updated on {this.state.Date1} at {this.state.timeRecorded}
+          <p></p>
+        </div>
+        <div>
+          <table className="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Currency</th>
+                <th scope="col">{this.state.Bank1}</th>
+                <th scope="col">{this.state.Bank2}</th>
+                <th scope="col">{this.state.Bank3}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">USD</th>
+                <td>{this.state.rates1}</td>
+                <td>{this.state.rates2}</td>
+                <td>{this.state.rates3}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

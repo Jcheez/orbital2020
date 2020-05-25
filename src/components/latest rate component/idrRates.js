@@ -10,6 +10,7 @@ class idrrate extends Component {
       Bank1: "",
       Timestamp1: "",
       rates1: "",
+      timeRecorded: "",
       Date2: "",
       Bank2: "",
       Timestamp2: "",
@@ -66,6 +67,7 @@ class idrrate extends Component {
                   data_array[0].rates[0].v / data_array[0].rates[1].v
                 ).toPrecision(4)
               : "Not Found",
+          timeRecorded: data_array[0].timeRecorded,
           Date2: data_array[1].Date,
           Bank2: data_array[1].Bank,
           Timestamp2: data_array[1].Timestamp,
@@ -94,24 +96,31 @@ class idrrate extends Component {
   render() {
     return (
       <div>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Currency</th>
-              <th scope="col">{this.state.Bank1}</th>
-              <th scope="col">{this.state.Bank2}</th>
-              <th scope="col">{this.state.Bank3}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">IDR</th>
-              <td>{this.state.rates1}</td>
-              <td>{this.state.rates2}</td>
-              <td>{this.state.rates3}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div>
+          <p> </p>
+          Last updated on {this.state.Date1} at {this.state.timeRecorded}
+          <p></p>
+        </div>
+        <div>
+          <table className="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Currency</th>
+                <th scope="col">{this.state.Bank1}</th>
+                <th scope="col">{this.state.Bank2}</th>
+                <th scope="col">{this.state.Bank3}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">IDR</th>
+                <td>{this.state.rates1}</td>
+                <td>{this.state.rates2}</td>
+                <td>{this.state.rates3}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

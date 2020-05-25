@@ -191,22 +191,22 @@ class dropdownbar extends Component {
           </div>
           {this.state.dropdown ? (
             <ul>
-              <li onClick={this.showUSD}>US Dollar</li>
-              <li onClick={this.showEuro}>Euro</li>
-              <li onClick={this.showGbp}>Sterling Pound</li>
-              <li onClick={this.showJpy}>Japanese Yen</li>
-              <li onClick={this.showCny}>Chinese Renminbi</li>
-              <li onClick={this.showAud}>Australian Dollar</li>
-              <li onClick={this.showCad}>Canadian Dollar</li>
-              <li onClick={this.showNzd}>New Zealand Dollar</li>
-              <li onClick={this.showHkd}>Hong Kong Dollar</li>
-              <li onClick={this.showChf}>Swiss Franc</li>
-              <li onClick={this.showMyr}>Malaysian Ringgit</li>
-              <li onClick={this.showIdr}>Indonesian Rupiah</li>
-              <li onClick={this.showThb}>Thai Baht</li>
-              <li onClick={this.showKrw}>Korean Won</li>
-              <li onClick={this.showNtd}>New Taiwan Dollar</li>
-              <li onClick={this.showAed}>UAE Dirham</li>
+              <option onClick={this.showUSD}>US Dollar</option>
+              <option onClick={this.showEuro}>Euro</option>
+              <option onClick={this.showGbp}>Sterling Pound</option>
+              <option onClick={this.showJpy}>Japanese Yen</option>
+              <option onClick={this.showCny}>Chinese Renminbi</option>
+              <option onClick={this.showAud}>Australian Dollar</option>
+              <option onClick={this.showCad}>Canadian Dollar</option>
+              <option onClick={this.showNzd}>New Zealand Dollar</option>
+              <option onClick={this.showHkd}>Hong Kong Dollar</option>
+              <option onClick={this.showChf}>Swiss Franc</option>
+              <option onClick={this.showMyr}>Malaysian Ringgit</option>
+              <option onClick={this.showIdr}>Indonesian Rupiah</option>
+              <option onClick={this.showThb}>Thai Baht</option>
+              <option onClick={this.showKrw}>Korean Won</option>
+              <option onClick={this.showNtd}>New Taiwan Dollar</option>
+              <option onClick={this.showAed}>UAE Dirham</option>
             </ul>
           ) : null}
         </div>

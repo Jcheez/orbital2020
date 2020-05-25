@@ -7,6 +7,7 @@ const currencySchema = new Schema({
   Bank: { type: String, required: true },
   Timestamp: { type: String, required: true },
   rates: { type: Object, required: true },
+  timeRecorded: { type: String, required: true },
 });
 
 const currencies = mongoose.model("currencies", currencySchema); //currencies is the collection name

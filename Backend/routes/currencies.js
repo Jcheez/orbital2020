@@ -11,6 +11,7 @@ router.route("/USD").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -31,6 +32,7 @@ router.route("/EUR").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -51,6 +53,7 @@ router.route("/GBP").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -73,6 +76,7 @@ router.route("/JPY").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -95,6 +99,7 @@ router.route("/CNY").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -120,6 +125,7 @@ router.route("/AUD").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -142,6 +148,7 @@ router.route("/CAD").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -164,6 +171,7 @@ router.route("/NZD").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -186,6 +194,7 @@ router.route("/HKD").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -208,6 +217,7 @@ router.route("/CHF").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -230,6 +240,7 @@ router.route("/MYR").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -255,6 +266,7 @@ router.route("/IDR").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -281,6 +293,7 @@ router.route("/THB").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -303,6 +316,7 @@ router.route("/KRW").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -325,6 +339,7 @@ router.route("/NTD").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
@@ -351,6 +366,7 @@ router.route("/AED").get((req, res) => {
           Date: 1,
           Bank: 1,
           Timestamp: 1,
+          timeRecorded: 1,
         },
       },
       {
