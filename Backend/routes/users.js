@@ -13,7 +13,7 @@ router.post("/signup", (req, res) => {
   }
 
   users.find({ email: req.body.email }).then((email) => {
-    if (email === true) {
+    if (email !== null) {
       return res.status(400).json("This email has been taken by another user");
     } else {
       const newUser = new users({
@@ -29,20 +29,20 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  const { errors, validated } = validateLogin(req.data);
+  const { errors, validated } = validateLogin(req.body);
 
   if (validated === false) {
     return res.status(400).json(errors);
   }
 
-  const email = req.data.email;
-  const password = req.data.password;
+  const email = req.body.email;
+  const password = req.body.password;
 
   users.find({ email }).then((user) => {
-    if (user === false) {
+    if (!user) {
       return res.status(400).json("Email not registered yet");
     }
-    if (password === user.password) {
+    if (email === user[0].email && password === user[0].password) {
       const payload = {
         id: user.id,
         email: user.email,
@@ -54,7 +54,7 @@ router.post("/login", (req, res) => {
         });
       });
     } else {
-      return res.status(400).json("Incorrect password");
+      return res.status(400).json("Incorrect email or password combination");
     }
   });
 });
