@@ -7,7 +7,7 @@ class latestRate extends Component {
     return (
       <div>
         <Dropdown />
-        <p> </p>
+        <br />
         <p>
           Disclaimer: Please Double confirm the rates with your bank before
           making any transactions. We will not be responsible for any
