@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-class Signup extends Component {
+class Login extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
       email: "",
       password: "",
-      confirmPassword: "",
       errors: {},
     };
   }
@@ -17,13 +14,11 @@ class Signup extends Component {
   };
   onSubmit = (e) => {
     e.preventDefault();
-    const newUser = {
-      name: this.state.name,
+    const userData = {
       email: this.state.email,
       password: this.state.password,
-      confirmPassword: this.state.confirmPassword,
     };
-    console.log(newUser);
+    console.log(userData);
   };
   render() {
     const { errors } = this.state;
@@ -31,27 +26,19 @@ class Signup extends Component {
       <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
-            <Link to="/">Back to home</Link>
+            <Link to="/" className="btn-flat waves-effect">
+              Back to home
+            </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
-                <b>Register below</b>
+                <b>Login below</b>
               </h4>
               <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
+                Don't have an account? <Link to="/signup">Register Here</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field">
-                <label htmlFor="name">Name: </label>
-                <input
-                  onChange={this.onChange}
-                  value={this.state.name}
-                  error={errors.name}
-                  id="name"
-                  type="text"
-                />
-              </div>
-              <div className="input-field">
+              <div className="input-field col s12">
                 <label htmlFor="email">Email: </label>
                 <input
                   onChange={this.onChange}
@@ -61,7 +48,7 @@ class Signup extends Component {
                   type="email"
                 />
               </div>
-              <div className="input-field">
+              <div className="input-field col s12">
                 <label htmlFor="password">Password: </label>
                 <input
                   onChange={this.onChange}
@@ -71,19 +58,18 @@ class Signup extends Component {
                   type="password"
                 />
               </div>
-              <div className="input-field">
-                <label htmlFor="confirmPassword">Confirm Password: </label>
-                <input
-                  onChange={this.onChange}
-                  value={this.state.confirmPassword}
-                  error={errors.confirmPassword}
-                  id="confirmPassword"
-                  type="password"
-                />
-              </div>
               <div className="col s12">
-                <button type="submit" class="btn btn-primary">
-                  Sign up
+                <button
+                  style={{
+                    width: "150px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem",
+                  }}
+                  type="submit"
+                  class="btn btn-primary"
+                >
+                  Login
                 </button>
               </div>
             </form>
@@ -93,4 +79,4 @@ class Signup extends Component {
     );
   }
 }
-export default Signup;
+export default Login;

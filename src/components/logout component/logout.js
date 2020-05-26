@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import Login from "../login page component/login";
+import Login from "../welcome page component/welcome";
 
 class logout extends Component {
   render() {

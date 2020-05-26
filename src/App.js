@@ -2,17 +2,22 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Login from "./components/login page component/login";
+import Welcome from "./components/welcome page component/welcome";
 import Signup from "./components/signup component/signup";
-import Home from "./components/home component/home";
+import Login from "./components/login component/login";
+
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
-    <Router>
-      <Route path="/" exact component={Login} />
-      <Route path="/signup" exact component={Signup} />
-      <Route path="/home" exact component={Home} />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Route path="/" exact component={Welcome} />
+        <Route path="/signup" exact component={Signup} />
+        <Route path="/login" exact component={Login} />
+      </Router>
+    </Provider>
   );
 }
 
