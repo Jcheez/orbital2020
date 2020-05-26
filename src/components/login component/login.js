@@ -74,10 +74,10 @@ class Login extends Component {
                     invalid: errors.email || errors.emailnotfound,
                   })}
                 />
-                <span className="red-text">
+                <div>
                   {errors.email}
                   {errors.emailnotfound}
-                </span>
+                </div>
               </div>
               <br />
               <div className="input-field col s12">
@@ -93,10 +93,10 @@ class Login extends Component {
                     invalid: errors.password || errors.passwordincorrect,
                   })}
                 />
-                <span className="red-text">
+                <div>
                   {errors.password}
                   {errors.passwordincorrect}
-                </span>
+                </div>
               </div>
               <div className="col s12">
                 <button

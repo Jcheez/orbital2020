@@ -74,7 +74,7 @@ class Signup extends Component {
                     invalid: errors.email,
                   })}
                 />
-                <span className="red-text">{errors.email}</span>
+                <div>{errors.email}</div>
               </div>
               <div className="input-field">
                 <label htmlFor="password">Password: </label>
@@ -88,7 +88,7 @@ class Signup extends Component {
                     invalid: errors.password,
                   })}
                 />
-                <span className="red-text">{errors.password}</span>
+                <div>{errors.password}</div>
               </div>
               <div className="input-field">
                 <label htmlFor="confirmPassword">Confirm Password: </label>
@@ -99,10 +99,10 @@ class Signup extends Component {
                   id="confirmPassword"
                   type="password"
                   className={classnames("", {
-                    invalid: errors.password2,
+                    invalid: errors.confirmPassword,
                   })}
                 />
-                <span className="red-text">{errors.password2}</span>
+                <div>{errors.confirmPassword}</div>
               </div>
               <div className="col s12">
                 <button type="submit" className="btn btn-primary">
