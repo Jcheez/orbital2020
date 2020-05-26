@@ -12,8 +12,9 @@ router.post("/signup", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  users.find({ email: req.body.email }).then((email) => {
-    if (email !== null) {
+  users.find({ email: req.body.email }).then((user) => {
+    console.log(user);
+    if (user[0]) {
       return res.status(400).json("This email has been taken by another user");
     } else {
       const newUser = new users({
