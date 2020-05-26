@@ -5,7 +5,7 @@ import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 
 export const registerUser = (userData, history) => (dispatch) => {
   axios
-    .post("/api/users/register", userData)
+    .post("http://localhost:5000/users/signup", userData)
     .then((res) => history.push("/login"))
     .catch((err) =>
       dispatch({
@@ -17,7 +17,7 @@ export const registerUser = (userData, history) => (dispatch) => {
 
 export const loginUser = (userData) => (dispatch) => {
   axios
-    .post("/api/users/login", userData)
+    .post("http://localhost:5000/users/login", userData)
     .then((res) => {
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
