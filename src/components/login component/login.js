@@ -63,6 +63,7 @@ class Login extends Component {
             <form noValidate onSubmit={this.onSubmit}>
               <div className="input-field col s12">
                 <label htmlFor="email">Email: </label>
+                <br />
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -78,8 +79,10 @@ class Login extends Component {
                   {errors.emailnotfound}
                 </span>
               </div>
+              <br />
               <div className="input-field col s12">
                 <label htmlFor="password">Password: </label>
+                <br />
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
