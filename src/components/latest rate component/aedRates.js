@@ -19,6 +19,9 @@ class aedrate extends Component {
       Bank3: "",
       Timestamp3: "",
       rates3: "",
+      bestrate: "",
+      newAmount: "",
+      newAmount1: "",
     };
   }
 
@@ -57,6 +60,23 @@ class aedrate extends Component {
           }
         }
 
+        var best = data_array[0].rates[0].v / data_array[0].rates[1].v;
+        if (
+          best > data_array[1].rates[0].v / data_array[1].rates[1].v &&
+          data_array[1].rates[0].v / data_array[1].rates[1].v <
+            data_array[2].rates[0].v / data_array[2].rates[1].v
+        ) {
+          best = data_array[1].rates[0].v / data_array[1].rates[1].v;
+        } else if (
+          best > data_array[2].rates[0].v / data_array[2].rates[1].v &&
+          data_array[1].rates[0].v / data_array[1].rates[1].v >
+            data_array[2].rates[0].v / data_array[2].rates[1].v
+        ) {
+          best = data_array[2].rates[0].v / data_array[2].rates[1].v;
+        }
+
+        console.log(best);
+
         this.setState({
           Date1: data_array[0].Date,
           Bank1: data_array[0].Bank,
@@ -86,12 +106,21 @@ class aedrate extends Component {
                   data_array[2].rates[0].v / data_array[2].rates[1].v
                 ).toPrecision(4)
               : "Not Found",
+          bestrate: best,
         });
       })
       .catch((error) => {
         console.log(error);
       });
   }
+
+  newAmount = (event) => {
+    this.setState({ newAmount: event.target.value });
+  };
+
+  newAmount1 = (event) => {
+    this.setState({ newAmount1: event.target.value });
+  };
 
   render() {
     return (
@@ -119,6 +148,26 @@ class aedrate extends Component {
                 <td>{this.state.rates3}</td>
               </tr>
             </tbody>
+          </table>
+        </div>
+        <div>
+          <br />
+          <p>Using the best rate, the exchange rate is as follows:</p>
+          <table className="table table-bordered size=sm">
+            <tr>
+              <td>
+                <form>
+                  <input type="number" onChange={this.newAmount} min="0" /> SGD
+                  equals {this.state.bestrate * this.state.newAmount} AED
+                </form>
+              </td>
+              <td>
+                <form>
+                  <input type="number" onChange={this.newAmount1} min="0" /> AED
+                  equals {this.state.newAmount1 / this.state.bestrate} SGD
+                </form>
+              </td>
+            </tr>
           </table>
         </div>
       </div>
