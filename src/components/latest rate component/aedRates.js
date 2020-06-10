@@ -60,50 +60,65 @@ class aedrate extends Component {
           }
         }
 
-        var best = data_array[0].rates[0].v / data_array[0].rates[1].v;
+        var best =
+          data_array[data_array.length - 1].rates[0].v /
+          data_array[data_array.length - 1].rates[1].v;
         if (
-          best > data_array[1].rates[0].v / data_array[1].rates[1].v &&
-          data_array[1].rates[0].v / data_array[1].rates[1].v <
-            data_array[2].rates[0].v / data_array[2].rates[1].v
+          best >
+            data_array[data_array.length - 2].rates[0].v /
+              data_array[data_array.length - 2].rates[1].v &&
+          data_array[data_array.length - 2].rates[0].v /
+            data_array[data_array.length - 2].rates[1].v <
+            data_array[data_array.length - 3].rates[0].v /
+              data_array[data_array.length - 3].rates[1].v
         ) {
-          best = data_array[1].rates[0].v / data_array[1].rates[1].v;
+          best =
+            data_array[data_array.length - 2].rates[0].v /
+            data_array[data_array.length - 2].rates[1].v;
         } else if (
-          best > data_array[2].rates[0].v / data_array[2].rates[1].v &&
-          data_array[1].rates[0].v / data_array[1].rates[1].v >
-            data_array[2].rates[0].v / data_array[2].rates[1].v
+          best >
+            data_array[data_array.length - 3].rates[0].v /
+              data_array[data_array.length - 3].rates[1].v &&
+          data_array[data_array.length - 2].rates[0].v /
+            data_array[data_array.length - 2].rates[1].v >
+            data_array[data_array.length - 3].rates[0].v /
+              data_array[data_array.length - 3].rates[1].v
         ) {
-          best = data_array[2].rates[0].v / data_array[2].rates[1].v;
+          best =
+            data_array[data_array.length - 3].rates[0].v /
+            data_array[data_array.length - 3].rates[1].v;
         }
 
-        console.log(best);
-
         this.setState({
-          Date1: data_array[0].Date,
-          Bank1: data_array[0].Bank,
-          Timestamp1: data_array[0].Timestamp,
+          Date1: data_array[data_array.length - 1].Date,
+          Bank1: data_array[data_array.length - 1].Bank,
+          Timestamp1: data_array[data_array.length - 1].Timestamp,
           rates1:
-            typeof data_array[0].rates[0].v === "number"
+            typeof data_array[data_array.length - 1].rates[0].v === "number"
               ? (
-                  data_array[0].rates[0].v / data_array[0].rates[1].v
+                  data_array[data_array.length - 1].rates[0].v /
+                  data_array[data_array.length - 1].rates[1].v
                 ).toPrecision(4)
               : "Not Found",
-          timeRecorded: data_array[0].timeRecorded,
-          Date2: data_array[1].Date,
-          Bank2: data_array[1].Bank,
-          Timestamp2: data_array[1].Timestamp,
+          timeRecorded: data_array[data_array.length - 1].timeRecorded,
+          Date2: data_array[data_array.length - 2].Date,
+          Bank2: data_array[data_array.length - 2].Bank,
+          Timestamp2: data_array[data_array.length - 2].Timestamp,
           rates2:
-            typeof data_array[1].rates[0].v === "number"
+            typeof data_array[data_array.length - 2].rates[0].v === "number"
               ? (
-                  data_array[1].rates[0].v / data_array[1].rates[1].v
+                  data_array[data_array.length - 2].rates[0].v /
+                  data_array[data_array.length - 2].rates[1].v
                 ).toPrecision(4)
               : "Not Found",
-          Date3: data_array[2].Date,
-          Bank3: data_array[2].Bank,
-          Timestamp3: data_array[2].Timestamp,
+          Date3: data_array[data_array.length - 3].Date,
+          Bank3: data_array[data_array.length - 3].Bank,
+          Timestamp3: data_array[data_array.length - 3].Timestamp,
           rates3:
-            typeof data_array[2].rates[0].v === "number"
+            typeof data_array[data_array.length - 3].rates[0].v === "number"
               ? (
-                  data_array[2].rates[0].v / data_array[2].rates[1].v
+                  data_array[data_array.length - 3].rates[0].v /
+                  data_array[data_array.length - 3].rates[1].v
                 ).toPrecision(4)
               : "Not Found",
           bestrate: best,
