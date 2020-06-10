@@ -172,14 +172,18 @@ class aedrate extends Component {
             <tr>
               <td>
                 <form>
-                  <input type="number" onChange={this.newAmount} min="0" /> SGD
-                  equals {this.state.bestrate * this.state.newAmount} AED
+                  <input type="number" onChange={this.newAmount} min="0" /> AED
+                  equals{" "}
+                  {(this.state.bestrate * this.state.newAmount).toPrecision(4)}{" "}
+                  SGD
                 </form>
               </td>
               <td>
                 <form>
-                  <input type="number" onChange={this.newAmount1} min="0" /> AED
-                  equals {this.state.newAmount1 / this.state.bestrate} SGD
+                  <input type="number" onChange={this.newAmount1} min="0" /> SGD
+                  equals{" "}
+                  {(this.state.newAmount1 / this.state.bestrate).toPrecision(4)}{" "}
+                  AED
                 </form>
               </td>
             </tr>
