@@ -52,7 +52,7 @@ class Login extends Component {
             <Link to="/" className="btn-flat waves-effect">
               Back to home
             </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <div className="col s12" style={{ paddingLeft: "15px" }}>
               <h4>
                 <b>Login below</b>
               </h4>
@@ -98,13 +98,13 @@ class Login extends Component {
                   {errors.passwordincorrect}
                 </div>
               </div>
+              <br />
               <div className="col s12">
                 <button
                   style={{
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
-                    marginTop: "1rem",
                   }}
                   type="submit"
                   class="btn btn-primary"

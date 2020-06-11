@@ -53,7 +53,7 @@ class Signup extends Component {
         <div className="row">
           <div className="col s8 offset-s2">
             <Link to="/">Back to home</Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <div className="col s12" style={{ paddingLeft: "15px" }}>
               <h4>
                 <b>Register below</b>
               </h4>
@@ -62,8 +62,9 @@ class Signup extends Component {
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field">
+              <div className="input-field col s12">
                 <label htmlFor="email">Email: </label>
+                <br />
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -72,12 +73,15 @@ class Signup extends Component {
                   type="email"
                   className={classnames("", {
                     invalid: errors.email,
+                    color: "red",
                   })}
                 />
                 <div>{errors.email}</div>
               </div>
-              <div className="input-field">
+              <br />
+              <div className="input-field col s12">
                 <label htmlFor="password">Password: </label>
+                <br />
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
@@ -86,12 +90,15 @@ class Signup extends Component {
                   type="password"
                   className={classnames("", {
                     invalid: errors.password,
+                    color: "red",
                   })}
                 />
                 <div>{errors.password}</div>
               </div>
-              <div className="input-field">
+              <br />
+              <div className="input-field col s12">
                 <label htmlFor="confirmPassword">Confirm Password: </label>
+                <br />
                 <input
                   onChange={this.onChange}
                   value={this.state.confirmPassword}
@@ -100,10 +107,12 @@ class Signup extends Component {
                   type="password"
                   className={classnames("", {
                     invalid: errors.confirmPassword,
+                    color: "red",
                   })}
                 />
                 <div>{errors.confirmPassword}</div>
               </div>
+              <br />
               <div className="col s12">
                 <button type="submit" className="btn btn-primary">
                   Sign up
