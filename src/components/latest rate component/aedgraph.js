@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 
 class aedchart extends Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class aedchart extends Component {
   render() {
     return (
       <div>
-        <Line
+        <Bar
           data={this.state.chartData}
           height="300"
           width="500"
