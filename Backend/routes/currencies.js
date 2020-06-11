@@ -107,6 +107,7 @@ router.route("/CNY").get((req, res) => {
           $or: [
             { "rates.0.k": "Chinese Renminbi" },
             { "rates.0.k": "CNY not found" },
+            { "rates.0.k": "CNY" },
           ],
         },
       },

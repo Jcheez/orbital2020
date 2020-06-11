@@ -99,8 +99,9 @@ class cnyrate extends Component {
         <div>
           <p> </p>
           Last updated on {this.state.Date1} at {this.state.timeRecorded}
-          <p></p>
+          <p> </p>
         </div>
+
         <div>
           <table className="table table-bordered">
             <thead>

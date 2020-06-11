@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
+import Aedchart from "./aedgraph";
 
 class aedrate extends Component {
   constructor(props) {
@@ -188,6 +189,9 @@ class aedrate extends Component {
               </td>
             </tr>
           </table>
+        </div>
+        <div>
+          <Aedchart />
         </div>
       </div>
     );
