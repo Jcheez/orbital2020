@@ -7,11 +7,19 @@ class Welcome extends Component {
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
-            <button className="col s6">
+            <button
+              className="col s6"
+              style={{
+                paddingLeft: "1px",
+                paddingRight: "1px",
+                borderRightWidth: "2px",
+                borderLeftWidth: "2px",
+              }}
+            >
               <Link
                 to="/signup"
                 style={{
-                  width: "140px",
+                  width: "684px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px",
                 }}
@@ -20,11 +28,19 @@ class Welcome extends Component {
                 Register
               </Link>
             </button>
-            <button className="col s6">
+            <button
+              className="col s6"
+              style={{
+                paddingLeft: "1px",
+                paddingRight: "1px",
+                borderRightWidth: "2px",
+                borderLeftWidth: "2px",
+              }}
+            >
               <Link
                 to="/login"
                 style={{
-                  width: "140px",
+                  width: "684px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px",
                 }}
