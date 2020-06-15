@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
-import Aedchart from "./aedgraph";
+import Aedchartdaily from "./aedgraph_daily";
+import Aedchartmonthly from "./aedgraph_monthly";
 
 class aedrate extends Component {
   constructor(props) {
@@ -23,6 +24,8 @@ class aedrate extends Component {
       bestrate: "",
       newAmount: "",
       newAmount1: "",
+      showdaily: false,
+      button_text: "Daily",
     };
   }
 
@@ -138,6 +141,14 @@ class aedrate extends Component {
     this.setState({ newAmount1: event.target.value });
   };
 
+  show_chart = () => {
+    if (this.state.showdaily === true) {
+      this.setState({ showdaily: false, button_text: "Daily" });
+    } else {
+      this.setState({ showdaily: true, button_text: "Monthly" });
+    }
+  };
+
   render() {
     return (
       <div>
@@ -191,8 +202,14 @@ class aedrate extends Component {
           </table>
         </div>
         <div>
-          <Aedchart />
+          <p>
+            Click this button to toggle between the daily chart and monthly
+            chart!
+          </p>
+          <button onClick={this.show_chart}>{this.state.button_text}</button>
         </div>
+        <div>{!this.state.showdaily && <Aedchartdaily />}</div>
+        <div>{this.state.showdaily && <Aedchartmonthly />}</div>
       </div>
     );
   }
