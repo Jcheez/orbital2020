@@ -30,7 +30,22 @@ class aedchart_m extends Component {
 
         for (let i = 0, len = response.data.length; i < len; i++) {
           let curr_date = response.data[i].Date.split("/");
-          if (curr_date[1] === Month_str) {
+          let time_recorded = response.data[i].timeRecorded;
+          if (
+            curr_date[1] === Month_str &&
+            (time_recorded === "08:00" ||
+              time_recorded === "08:01" ||
+              time_recorded === "08:02" ||
+              time_recorded === "08:03" ||
+              time_recorded === "08:04 " ||
+              time_recorded === "08:05" ||
+              time_recorded === "18:00" ||
+              time_recorded === "18:01" ||
+              time_recorded === "18:02" ||
+              time_recorded === "18:03" ||
+              time_recorded === "18:04" ||
+              time_recorded === "18:05")
+          ) {
             if (response.data[i].Bank === "DBS") {
               today_dbs.push(response.data[i]);
             } else if (response.data[i].Bank === "UOB") {
