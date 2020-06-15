@@ -154,7 +154,8 @@ class aedrate extends Component {
       <div>
         <div>
           <p> </p>
-          Last updated on {this.state.Date1} at {this.state.timeRecorded}
+          Last updated on {this.state.Date1} at {this.state.timeRecorded}{" "}
+          Singapore Time (GMT+8)
           <p></p>
         </div>
         <div>

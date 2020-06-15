@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
+import moment from "moment";
 
 class aedchart_m extends Component {
   constructor(props) {
@@ -29,10 +30,14 @@ class aedchart_m extends Component {
         var today_ocbc = [];
 
         for (let i = 0, len = response.data.length; i < len; i++) {
-          let curr_date = response.data[i].Date.split("/");
+          // let curr_date = response.data[i].Date.split("/");
+          let db_date = moment(response.data[i].Date, "DD-MM-YYYY");
+          let current_date = moment();
+          let date_difference = current_date.diff(db_date, "days");
           let time_recorded = response.data[i].timeRecorded;
           if (
-            curr_date[1] === Month_str &&
+            // curr_date[1] === Month_str &&
+            date_difference < 32 &&
             (time_recorded === "08:00" ||
               time_recorded === "08:01" ||
               time_recorded === "08:02" ||
