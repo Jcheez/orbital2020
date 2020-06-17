@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
-import moment from "moment";
 
-class aedchart_m extends Component {
+class chfchart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,44 +12,28 @@ class aedchart_m extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/AED")
+      .get("http://localhost:5000/currencies/CHF")
       .then((response) => {
         var today = new Date();
 
+        var Day = today.getDate();
         var Month = today.getMonth() + 1;
         var Month_str = Month.toString();
+        var Year = today.getFullYear();
 
         if (Month_str.length === 1) {
           Month_str = "0" + Month_str;
         }
-        console.log("01/01/2020".split("/"));
+
+        var today_date = Day + "/" + Month_str + "/" + Year;
 
         var today_dbs = [];
         var today_uob = [];
         var today_ocbc = [];
 
         for (let i = 0, len = response.data.length; i < len; i++) {
-          // let curr_date = response.data[i].Date.split("/");
-          let db_date = moment(response.data[i].Date, "DD-MM-YYYY");
-          let current_date = moment();
-          let date_difference = current_date.diff(db_date, "days");
-          let time_recorded = response.data[i].timeRecorded;
-          if (
-            // curr_date[1] === Month_str &&
-            date_difference < 32 &&
-            (time_recorded === "08:00" ||
-              time_recorded === "08:01" ||
-              time_recorded === "08:02" ||
-              time_recorded === "08:03" ||
-              time_recorded === "08:04 " ||
-              time_recorded === "08:05" ||
-              time_recorded === "18:00" ||
-              time_recorded === "18:01" ||
-              time_recorded === "18:02" ||
-              time_recorded === "18:03" ||
-              time_recorded === "18:04" ||
-              time_recorded === "18:05")
-          ) {
+          let curr_date = response.data[i].Date;
+          if (curr_date === today_date) {
             if (response.data[i].Bank === "DBS") {
               today_dbs.push(response.data[i]);
             } else if (response.data[i].Bank === "UOB") {
@@ -67,7 +50,7 @@ class aedchart_m extends Component {
         }
 
         function get_timedate(item) {
-          var timedate = [item.Date, item.timeRecorded].join(" ");
+          var timedate = item.timeRecorded;
           return timedate;
         }
 
@@ -125,4 +108,4 @@ class aedchart_m extends Component {
   }
 }
 
-export default aedchart_m;
+export default chfchart;

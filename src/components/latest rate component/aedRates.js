@@ -154,7 +154,8 @@ class aedrate extends Component {
       <div>
         <div>
           <p> </p>
-          Last updated on {this.state.Date1} at {this.state.timeRecorded}
+          Last updated on {this.state.Date1} at {this.state.timeRecorded}{" "}
+          Singapore Time (GMT+8)
           <p></p>
         </div>
         <div>
@@ -186,7 +187,7 @@ class aedrate extends Component {
                 <form>
                   <input type="number" onChange={this.newAmount} min="0" /> AED
                   equals{" "}
-                  {(this.state.bestrate * this.state.newAmount).toPrecision(4)}{" "}
+                  {(this.state.bestrate * this.state.newAmount).toPrecision(6)}{" "}
                   SGD
                 </form>
               </td>
@@ -194,7 +195,7 @@ class aedrate extends Component {
                 <form>
                   <input type="number" onChange={this.newAmount1} min="0" /> SGD
                   equals{" "}
-                  {(this.state.newAmount1 / this.state.bestrate).toPrecision(4)}{" "}
+                  {(this.state.newAmount1 / this.state.bestrate).toPrecision(6)}{" "}
                   AED
                 </form>
               </td>

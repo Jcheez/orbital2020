@@ -12,6 +12,7 @@
     "classnames": "^2.2.6",
     "is-empty": "^1.2.0",
     "jwt-decode": "^2.2.0",
+    "moment": "^2.26.0",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
