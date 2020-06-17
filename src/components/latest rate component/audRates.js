@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
+import Audchartdaily from "./audgraph_daily";
+import Audchartmonthly from "./audgraph_monthly";
 
 class audrate extends Component {
   constructor(props) {
@@ -19,6 +21,11 @@ class audrate extends Component {
       Bank3: "",
       Timestamp3: "",
       rates3: "",
+      bestrate: "",
+      newAmount: "",
+      newAmount1: "",
+      showdaily: false,
+      button_text: "Daily",
     };
   }
 
@@ -57,35 +64,68 @@ class audrate extends Component {
           }
         }
 
+        var best =
+          data_array[data_array.length - 1].rates[0].v /
+          data_array[data_array.length - 1].rates[1].v;
+        if (
+          best >
+            data_array[data_array.length - 2].rates[0].v /
+              data_array[data_array.length - 2].rates[1].v &&
+          data_array[data_array.length - 2].rates[0].v /
+            data_array[data_array.length - 2].rates[1].v <
+            data_array[data_array.length - 3].rates[0].v /
+              data_array[data_array.length - 3].rates[1].v
+        ) {
+          best =
+            data_array[data_array.length - 2].rates[0].v /
+            data_array[data_array.length - 2].rates[1].v;
+        } else if (
+          best >
+            data_array[data_array.length - 3].rates[0].v /
+              data_array[data_array.length - 3].rates[1].v &&
+          data_array[data_array.length - 2].rates[0].v /
+            data_array[data_array.length - 2].rates[1].v >
+            data_array[data_array.length - 3].rates[0].v /
+              data_array[data_array.length - 3].rates[1].v
+        ) {
+          best =
+            data_array[data_array.length - 3].rates[0].v /
+            data_array[data_array.length - 3].rates[1].v;
+        }
+
         this.setState({
-          Date1: data_array[0].Date,
-          Bank1: data_array[0].Bank,
-          Timestamp1: data_array[0].Timestamp,
+          Date1: data_array[data_array.length - 1].Date,
+          Bank1: data_array[data_array.length - 1].Bank,
+          Timestamp1: data_array[data_array.length - 1].Timestamp,
           rates1:
-            typeof data_array[0].rates[0].v === "number"
+            typeof data_array[data_array.length - 1].rates[0].v === "number"
               ? (
-                  data_array[0].rates[0].v / data_array[0].rates[1].v
+                  data_array[data_array.length - 1].rates[0].v /
+                  data_array[data_array.length - 1].rates[1].v
                 ).toPrecision(4)
               : "Not Found",
-          timeRecorded: data_array[0].timeRecorded,
-          Date2: data_array[1].Date,
-          Bank2: data_array[1].Bank,
-          Timestamp2: data_array[1].Timestamp,
+          timeRecorded: data_array[data_array.length - 1].timeRecorded,
+          Date2: data_array[data_array.length - 2].Date,
+          Bank2: data_array[data_array.length - 2].Bank,
+          Timestamp2: data_array[data_array.length - 2].Timestamp,
           rates2:
-            typeof data_array[1].rates[0].v === "number"
+            typeof data_array[data_array.length - 2].rates[0].v === "number"
               ? (
-                  data_array[1].rates[0].v / data_array[1].rates[1].v
+                  data_array[data_array.length - 2].rates[0].v /
+                  data_array[data_array.length - 2].rates[1].v
                 ).toPrecision(4)
               : "Not Found",
-          Date3: data_array[2].Date,
-          Bank3: data_array[2].Bank,
-          Timestamp3: data_array[2].Timestamp,
+          Date3: data_array[data_array.length - 3].Date,
+          Bank3: data_array[data_array.length - 3].Bank,
+          Timestamp3: data_array[data_array.length - 3].Timestamp,
           rates3:
-            typeof data_array[2].rates[0].v === "number"
+            typeof data_array[data_array.length - 3].rates[0].v === "number"
               ? (
-                  data_array[2].rates[0].v / data_array[2].rates[1].v
+                  data_array[data_array.length - 3].rates[0].v /
+                  data_array[data_array.length - 3].rates[1].v
                 ).toPrecision(4)
               : "Not Found",
+          bestrate: best,
         });
       })
       .catch((error) => {
@@ -93,12 +133,29 @@ class audrate extends Component {
       });
   }
 
+  newAmount = (event) => {
+    this.setState({ newAmount: event.target.value });
+  };
+
+  newAmount1 = (event) => {
+    this.setState({ newAmount1: event.target.value });
+  };
+
+  show_chart = () => {
+    if (this.state.showdaily === true) {
+      this.setState({ showdaily: false, button_text: "Daily" });
+    } else {
+      this.setState({ showdaily: true, button_text: "Monthly" });
+    }
+  };
+
   render() {
     return (
       <div>
         <div>
           <p> </p>
-          Last updated on {this.state.Date1} at {this.state.timeRecorded}
+          Last updated on {this.state.Date1} at {this.state.timeRecorded}{" "}
+          Singapore Time (GMT+8)
           <p></p>
         </div>
         <div>
@@ -121,6 +178,39 @@ class audrate extends Component {
             </tbody>
           </table>
         </div>
+        <div>
+          <br />
+          <p>Using the best rate, the exchange rate is as follows:</p>
+          <table className="table table-bordered size=sm">
+            <tr>
+              <td>
+                <form>
+                  <input type="number" onChange={this.newAmount} min="0" /> AUD
+                  equals{" "}
+                  {(this.state.bestrate * this.state.newAmount).toPrecision(6)}{" "}
+                  SGD
+                </form>
+              </td>
+              <td>
+                <form>
+                  <input type="number" onChange={this.newAmount1} min="0" /> SGD
+                  equals{" "}
+                  {(this.state.newAmount1 / this.state.bestrate).toPrecision(6)}{" "}
+                  AUD
+                </form>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <p>
+            Click this button to toggle between the daily chart and monthly
+            chart!
+          </p>
+          <button onClick={this.show_chart}>{this.state.button_text}</button>
+        </div>
+        <div>{!this.state.showdaily && <Audchartdaily />}</div>
+        <div>{this.state.showdaily && <Audchartmonthly />}</div>
       </div>
     );
   }
