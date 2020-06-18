@@ -53,19 +53,19 @@ class idrchart_m extends Component {
             if (
               response.data[i].Bank === "DBS" &&
               typeof response.data[i].rates[0].v === "number" &&
-              response.data[i].rates[0].v != 0
+              response.data[i].rates[0].v !== 0
             ) {
               today_dbs.push(response.data[i]);
             } else if (
               response.data[i].Bank === "UOB" &&
               typeof response.data[i].rates[0].v === "number" &&
-              response.data[i].rates[0].v != 0
+              response.data[i].rates[0].v !== 0
             ) {
               today_uob.push(response.data[i]);
             } else if (
               response.data[i].Bank === "OCBC" &&
               typeof response.data[i].rates[0].v === "number" &&
-              response.data[i].rates[0].v != 0
+              response.data[i].rates[0].v !== 0
             ) {
               today_ocbc.push(response.data[i]);
             }

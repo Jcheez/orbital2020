@@ -34,11 +34,23 @@ class gbpchart extends Component {
         for (let i = 0, len = response.data.length; i < len; i++) {
           let curr_date = response.data[i].Date;
           if (curr_date === today_date) {
-            if (response.data[i].Bank === "DBS") {
+            if (
+              response.data[i].Bank === "DBS" &&
+              typeof response.data[i].rates[0].v === "number" &&
+              response.data[i].rates[0].v !== 0
+            ) {
               today_dbs.push(response.data[i]);
-            } else if (response.data[i].Bank === "UOB") {
+            } else if (
+              response.data[i].Bank === "UOB" &&
+              typeof response.data[i].rates[0].v === "number" &&
+              response.data[i].rates[0].v !== 0
+            ) {
               today_uob.push(response.data[i]);
-            } else if (response.data[i].Bank === "OCBC") {
+            } else if (
+              response.data[i].Bank === "OCBC" &&
+              typeof response.data[i].rates[0].v === "number" &&
+              response.data[i].rates[0].v !== 0
+            ) {
               today_ocbc.push(response.data[i]);
             }
           }
@@ -54,11 +66,24 @@ class gbpchart extends Component {
           return timedate;
         }
 
+        function combiner(rates, dates) {
+          var result = [];
+          for (let i = 0, len = response.data.length; i < len; i++) {
+            var curr_rate = rates[i];
+            var curr_date = dates[i];
+            var data = { x: curr_date, y: curr_rate };
+            result.push(data);
+          }
+          return result;
+        }
+
         var dbs_rates = today_dbs.map(get_rates);
         var uob_rates = today_uob.map(get_rates);
         var ocbc_rates = today_ocbc.map(get_rates);
 
         var dbs_timedates = today_dbs.map(get_timedate);
+        var uob_timedates = today_uob.map(get_timedate);
+        var ocbc_timedates = today_ocbc.map(get_timedate);
 
         this.setState({
           chartData: {
@@ -66,21 +91,21 @@ class gbpchart extends Component {
             datasets: [
               {
                 label: "DBS",
-                data: dbs_rates,
+                data: combiner(dbs_rates, dbs_timedates),
                 backgroundColor: ["rgba(255, 255, 255, 0)"],
                 borderColor: ["rgba(255, 159, 64, 1)"],
                 borderWidth: 1,
               },
               {
                 label: "UOB",
-                data: uob_rates,
+                data: combiner(uob_rates, uob_timedates),
                 backgroundColor: ["rgba(255, 255, 255, 0)"],
                 borderColor: ["rgba(63, 191, 127, 1)"],
                 borderWidth: 1,
               },
               {
                 label: "OCBC",
-                data: ocbc_rates,
+                data: combiner(ocbc_rates, ocbc_timedates),
                 backgroundColor: ["rgba(255, 255, 255, 0)"],
                 borderColor: ["rgba(191, 63, 63, 1)"],
                 borderWidth: 1,
