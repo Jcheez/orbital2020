@@ -38,12 +38,12 @@ class audchart_m extends Component {
           if (
             // curr_date[1] === Month_str &&
             date_difference < 32 &&
-            (time_recorded === "08:00" ||
-              time_recorded === "08:01" ||
-              time_recorded === "08:02" ||
-              time_recorded === "08:03" ||
-              time_recorded === "08:04 " ||
-              time_recorded === "08:05" ||
+            (time_recorded === "09:00" ||
+              time_recorded === "09:01" ||
+              time_recorded === "09:02" ||
+              time_recorded === "09:03" ||
+              time_recorded === "09:04 " ||
+              time_recorded === "09:05" ||
               time_recorded === "18:00" ||
               time_recorded === "18:01" ||
               time_recorded === "18:02" ||

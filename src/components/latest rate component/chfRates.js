@@ -145,7 +145,7 @@ class chfrate extends Component {
     if (this.state.showdaily === true) {
       this.setState({ showdaily: false, button_text: "Daily" });
     } else {
-      this.setState({ showdaily: true, button_text: "Monthly" });
+      this.setState({ showdaily: true, button_text: "Current Month" });
     }
   };
 
