@@ -186,14 +186,16 @@ class usdrate extends Component {
   render() {
     return (
       <div>
-        <div>
-          <p> </p>
-          Last updated on {this.state.Date1} at {this.state.timeRecorded}{" "}
-          Singapore Time (GMT+8)
-          <p></p>
-        </div>
-        <div>
-          <table className="table table-bordered">
+        <div
+          className="ib"
+          style={{
+            width: "40%",
+            verticalAlign: "top",
+            display: "inline-block",
+            height: "218px",
+          }}
+        >
+          <table className="table table-bordered" style={{ marginTop: "20px" }}>
             <thead>
               <tr>
                 <th scope="col">Currency</th>
@@ -209,13 +211,27 @@ class usdrate extends Component {
                 <td>{this.state.rates2}</td>
                 <td>{this.state.rates3}</td>
               </tr>
+              <tr>
+                <td colspan="4">
+                  Last updated on {this.state.Date1} at{" "}
+                  {this.state.timeRecorded} Singapore Time (GMT+8)
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <div>
-          <br />
+        <div
+          className="ib"
+          style={{
+            width: "45%",
+            verticalAlign: "top",
+            display: "inline-block",
+            marginTop: "20px",
+            paddingLeft: "50px",
+          }}
+        >
           <p>Using the best rate, the exchange rate is as follows:</p>
-          <table className="table table-bordered size=sm">
+          <table className="table size=sm">
             <tr>
               <td>
                 <form>
@@ -225,6 +241,9 @@ class usdrate extends Component {
                   SGD
                 </form>
               </td>
+            </tr>
+            <tr>
+              {" "}
               <td>
                 <form>
                   <input type="number" onChange={this.newAmount1} min="0" /> SGD
@@ -243,8 +262,12 @@ class usdrate extends Component {
           </p>
           <button onClick={this.show_chart}>{this.state.button_text}</button>
         </div>
-        <div>{!this.state.showdaily && <Usdchartdaily />}</div>
-        <div>{this.state.showdaily && <Usdchartmonthly />}</div>
+        <div style={{ paddingRight: "20px" }}>
+          {!this.state.showdaily && <Usdchartdaily />}
+        </div>
+        <div style={{ paddingRight: "20px" }}>
+          {this.state.showdaily && <Usdchartmonthly />}
+        </div>
       </div>
     );
   }

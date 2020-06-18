@@ -5,7 +5,7 @@ class latestRate extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div style={{ marginLeft: 20 }}>
         <Dropdown />
         <br />
         <p>
