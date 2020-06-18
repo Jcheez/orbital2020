@@ -34,11 +34,20 @@ class cnychart extends Component {
         for (let i = 0, len = response.data.length; i < len; i++) {
           let curr_date = response.data[i].Date;
           if (curr_date === today_date) {
-            if (response.data[i].Bank === "DBS") {
+            if (
+              response.data[i].Bank === "DBS" &&
+              typeof response.data[i].rates[0].v === "number"
+            ) {
               today_dbs.push(response.data[i]);
-            } else if (response.data[i].Bank === "UOB") {
+            } else if (
+              response.data[i].Bank === "UOB" &&
+              typeof response.data[i].rates[0].v === "number"
+            ) {
               today_uob.push(response.data[i]);
-            } else if (response.data[i].Bank === "OCBC") {
+            } else if (
+              response.data[i].Bank === "OCBC" &&
+              typeof response.data[i].rates[0].v === "number"
+            ) {
               today_ocbc.push(response.data[i]);
             }
           }

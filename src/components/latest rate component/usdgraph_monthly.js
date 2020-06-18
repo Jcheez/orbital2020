@@ -3,7 +3,7 @@ import { Line } from "react-chartjs-2";
 import axios from "axios";
 import moment from "moment";
 
-class cnychart_m extends Component {
+class usdchart_m extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +13,7 @@ class cnychart_m extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/CNY")
+      .get("http://localhost:5000/currencies/USD")
       .then((response) => {
         var today = new Date();
 
@@ -133,4 +133,4 @@ class cnychart_m extends Component {
   }
 }
 
-export default cnychart_m;
+export default usdchart_m;
