@@ -78,7 +78,7 @@ class cnychart_m extends Component {
         }
 
         function get_timedate(item) {
-          var timedate = [item.Date, item.timeRecorded].join(" ");
+          var timedate = [item.Date.slice(0, 5), item.timeRecorded].join(" ");
           return timedate;
         }
 

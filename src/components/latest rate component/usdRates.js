@@ -134,10 +134,8 @@ class usdrate extends Component {
           Timestamp1: data_array[data_array.length - 1].Timestamp,
           rates1:
             typeof data_array[data_array.length - 1].rates[0].v === "number"
-              ? (
-                  data_array[data_array.length - 1].rates[0].v /
-                  data_array[data_array.length - 1].rates[1].v
-                ).toPrecision(4)
+              ? data_array[data_array.length - 1].rates[0].v /
+                data_array[data_array.length - 1].rates[1].v
               : "Not Found",
           timeRecorded: data_array[data_array.length - 1].timeRecorded,
           Date2: data_array[data_array.length - 2].Date,
@@ -145,20 +143,16 @@ class usdrate extends Component {
           Timestamp2: data_array[data_array.length - 2].Timestamp,
           rates2:
             typeof data_array[data_array.length - 2].rates[0].v === "number"
-              ? (
-                  data_array[data_array.length - 2].rates[0].v /
-                  data_array[data_array.length - 2].rates[1].v
-                ).toPrecision(4)
+              ? data_array[data_array.length - 2].rates[0].v /
+                data_array[data_array.length - 2].rates[1].v
               : "Not Found",
           Date3: data_array[data_array.length - 3].Date,
           Bank3: data_array[data_array.length - 3].Bank,
           Timestamp3: data_array[data_array.length - 3].Timestamp,
           rates3:
             typeof data_array[data_array.length - 3].rates[0].v === "number"
-              ? (
-                  data_array[data_array.length - 3].rates[0].v /
-                  data_array[data_array.length - 3].rates[1].v
-                ).toPrecision(4)
+              ? data_array[data_array.length - 3].rates[0].v /
+                data_array[data_array.length - 3].rates[1].v
               : "Not Found",
           bestrate: best,
         });
@@ -231,13 +225,16 @@ class usdrate extends Component {
             paddingLeft: "50px",
           }}
         >
-          <p>Using the best rate, the exchange rate is as follows:</p>
+          <p>
+            Using the best rate of {this.state.bestrate}, the exchange rate is
+            as follows:
+          </p>
           <table className="table size=sm">
             <tr>
               <td>
                 <form>
                   <input type="number" onChange={this.newAmount} min="0" /> USD
-                  equals{" "}
+                  ≈{" "}
                   {(this.state.bestrate * this.state.newAmount).toPrecision(6)}{" "}
                   SGD
                 </form>
@@ -248,7 +245,7 @@ class usdrate extends Component {
               <td>
                 <form>
                   <input type="number" onChange={this.newAmount1} min="0" /> SGD
-                  equals{" "}
+                  ≈{" "}
                   {(this.state.newAmount1 / this.state.bestrate).toPrecision(6)}{" "}
                   USD
                 </form>
@@ -258,15 +255,15 @@ class usdrate extends Component {
         </div>
         <div>
           <p>
-            Click this button to toggle between the daily chart and monthly
-            chart!
+            Click{" "}
+            <button onClick={this.show_chart}>{this.state.button_text}</button>{" "}
+            to toggle between the daily chart and monthly chart!
           </p>
-          <button onClick={this.show_chart}>{this.state.button_text}</button>
         </div>
-        <div style={{ paddingRight: "20px" }}>
+        <div style={{ paddingRight: "20px", height: "80%" }}>
           {!this.state.showdaily && <Usdchartdaily />}
         </div>
-        <div style={{ paddingRight: "20px" }}>
+        <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Usdchartmonthly />}
         </div>
         <div>

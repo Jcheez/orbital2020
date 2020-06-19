@@ -137,7 +137,7 @@ class thbrate extends Component {
               ? (
                   data_array[data_array.length - 1].rates[0].v /
                   data_array[data_array.length - 1].rates[1].v
-                ).toPrecision(4)
+                ).toPrecision(6)
               : "Not Found",
           timeRecorded: data_array[data_array.length - 1].timeRecorded,
           Date2: data_array[data_array.length - 2].Date,
@@ -148,7 +148,7 @@ class thbrate extends Component {
               ? (
                   data_array[data_array.length - 2].rates[0].v /
                   data_array[data_array.length - 2].rates[1].v
-                ).toPrecision(4)
+                ).toPrecision(6)
               : "Not Found",
           Date3: data_array[data_array.length - 3].Date,
           Bank3: data_array[data_array.length - 3].Bank,
@@ -158,7 +158,7 @@ class thbrate extends Component {
               ? (
                   data_array[data_array.length - 3].rates[0].v /
                   data_array[data_array.length - 3].rates[1].v
-                ).toPrecision(4)
+                ).toPrecision(6)
               : "Not Found",
           bestrate: best,
         });
@@ -187,14 +187,16 @@ class thbrate extends Component {
   render() {
     return (
       <div>
-        <div>
-          <p> </p>
-          Last updated on {this.state.Date1} at {this.state.timeRecorded}{" "}
-          Singapore Time (GMT+8)
-          <p></p>
-        </div>
-        <div>
-          <table className="table table-bordered">
+        <div
+          className="ib"
+          style={{
+            width: "40%",
+            verticalAlign: "top",
+            display: "inline-block",
+            height: "218px",
+          }}
+        >
+          <table className="table table-bordered" style={{ marginTop: "20px" }}>
             <thead>
               <tr>
                 <th scope="col">Currency</th>
@@ -210,26 +212,46 @@ class thbrate extends Component {
                 <td>{this.state.rates2}</td>
                 <td>{this.state.rates3}</td>
               </tr>
+              <tr>
+                <td colspan="4">
+                  Last updated on {this.state.Date1} at{" "}
+                  {this.state.timeRecorded} Singapore Time (GMT+8)
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <div>
-          <br />
-          <p>Using the best rate, the exchange rate is as follows:</p>
-          <table className="table table-bordered size=sm">
+        <div
+          className="ib"
+          style={{
+            width: "45%",
+            verticalAlign: "top",
+            display: "inline-block",
+            marginTop: "20px",
+            paddingLeft: "50px",
+          }}
+        >
+          <p>
+            Using the best rate of {this.state.bestrate}, the exchange rate is
+            as follows:
+          </p>
+          <table className="table size=sm">
             <tr>
               <td>
                 <form>
                   <input type="number" onChange={this.newAmount} min="0" /> THB
-                  equals{" "}
+                  ≈{" "}
                   {(this.state.bestrate * this.state.newAmount).toPrecision(6)}{" "}
                   SGD
                 </form>
               </td>
+            </tr>
+            <tr>
+              {" "}
               <td>
                 <form>
                   <input type="number" onChange={this.newAmount1} min="0" /> SGD
-                  equals{" "}
+                  ≈{" "}
                   {(this.state.newAmount1 / this.state.bestrate).toPrecision(6)}{" "}
                   THB
                 </form>
@@ -239,13 +261,17 @@ class thbrate extends Component {
         </div>
         <div>
           <p>
-            Click this button to toggle between the daily chart and monthly
-            chart!
+            Click{" "}
+            <button onClick={this.show_chart}>{this.state.button_text}</button>{" "}
+            to toggle between the daily chart and monthly chart!
           </p>
-          <button onClick={this.show_chart}>{this.state.button_text}</button>
         </div>
-        <div>{!this.state.showdaily && <Thbchartdaily />}</div>
-        <div>{this.state.showdaily && <Thbchartmonthly />}</div>
+        <div style={{ paddingRight: "20px", height: "80%" }}>
+          {!this.state.showdaily && <Thbchartdaily />}
+        </div>
+        <div style={{ paddingRight: "20px", height: "80%" }}>
+          {this.state.showdaily && <Thbchartmonthly />}
+        </div>
         <div>
           <Favourite currency="THB" />
         </div>
