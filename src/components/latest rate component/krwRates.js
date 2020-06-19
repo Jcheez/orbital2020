@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Krwchartdaily from "./krwgraph_daily";
 import Krwchartmonthly from "./krwgraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class krwrate extends Component {
   constructor(props) {
@@ -245,6 +246,9 @@ class krwrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Krwchartdaily />}</div>
         <div>{this.state.showdaily && <Krwchartmonthly />}</div>
+        <div>
+          <Favourite currency="KRW" />
+        </div>
       </div>
     );
   }

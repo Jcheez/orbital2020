@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Jpychartdaily from "./jpygraph_daily";
 import Jpychartmonthly from "./jpygraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class jpyrate extends Component {
   constructor(props) {
@@ -245,6 +246,9 @@ class jpyrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Jpychartdaily />}</div>
         <div>{this.state.showdaily && <Jpychartmonthly />}</div>
+        <div>
+          <Favourite currency="JPY" />
+        </div>
       </div>
     );
   }

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Audchartdaily from "./audgraph_daily";
 import Audchartmonthly from "./audgraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class audrate extends Component {
   constructor(props) {
@@ -211,6 +212,9 @@ class audrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Audchartdaily />}</div>
         <div>{this.state.showdaily && <Audchartmonthly />}</div>
+        <div>
+          <Favourite currency="AUD" />
+        </div>
       </div>
     );
   }

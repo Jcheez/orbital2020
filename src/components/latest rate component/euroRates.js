@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Eurochartdaily from "./eurograph_daily";
 import Eurochartmonthly from "./eurograph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class eurorate extends Component {
   constructor(props) {
@@ -211,6 +212,9 @@ class eurorate extends Component {
         </div>
         <div>{!this.state.showdaily && <Eurochartdaily />}</div>
         <div>{this.state.showdaily && <Eurochartmonthly />}</div>
+        <div>
+          <Favourite currency="EUR" />
+        </div>
       </div>
     );
   }

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Gbpchartdaily from "./gbpgraph_daily";
 import Gbpchartmonthly from "./gbpgraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class gbprate extends Component {
   constructor(props) {
@@ -211,6 +212,9 @@ class gbprate extends Component {
         </div>
         <div>{!this.state.showdaily && <Gbpchartdaily />}</div>
         <div>{this.state.showdaily && <Gbpchartmonthly />}</div>
+        <div>
+          <Favourite currency="GBP" />
+        </div>
       </div>
     );
   }

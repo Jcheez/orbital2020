@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Chfchartdaily from "./chfgraph_daily";
 import Chfchartmonthly from "./chfgraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class chfrate extends Component {
   constructor(props) {
@@ -211,6 +212,9 @@ class chfrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Chfchartdaily />}</div>
         <div>{this.state.showdaily && <Chfchartmonthly />}</div>
+        <div>
+          <Favourite currency="CHF" />
+        </div>
       </div>
     );
   }

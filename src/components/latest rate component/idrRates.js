@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Idrchartdaily from "./idrgraph_daily";
 import Idrchartmonthly from "./idrgraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class idrrate extends Component {
   constructor(props) {
@@ -245,6 +246,9 @@ class idrrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Idrchartdaily />}</div>
         <div>{this.state.showdaily && <Idrchartmonthly />}</div>
+        <div>
+          <Favourite currency="IDR" />
+        </div>
       </div>
     );
   }

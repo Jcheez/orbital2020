@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Ntdchartdaily from "./ntdgraph_daily";
 import Ntdchartmonthly from "./ntdgraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class ntdrate extends Component {
   constructor(props) {
@@ -245,6 +246,9 @@ class ntdrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Ntdchartdaily />}</div>
         <div>{this.state.showdaily && <Ntdchartmonthly />}</div>
+        <div>
+          <Favourite currency="NTD" />
+        </div>
       </div>
     );
   }

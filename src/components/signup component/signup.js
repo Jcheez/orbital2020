@@ -36,7 +36,7 @@ class Signup extends Component {
       password: this.state.password,
       confirmPassword: this.state.confirmPassword,
     };
-    console.log(newUser);
+
     this.props.registerUser(newUser, this.props.history);
   };
 

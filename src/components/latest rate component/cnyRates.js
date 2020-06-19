@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Cnychartdaily from "./cnygraph_daily";
 import Cnychartmonthly from "./cnygraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class cnyrate extends Component {
   constructor(props) {
@@ -245,6 +246,9 @@ class cnyrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Cnychartdaily />}</div>
         <div>{this.state.showdaily && <Cnychartmonthly />}</div>
+        <div>
+          <Favourite currency="CNY" />
+        </div>
       </div>
     );
   }

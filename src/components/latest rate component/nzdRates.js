@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Nzdchartdaily from "./nzdgraph_daily";
 import Nzdchartmonthly from "./nzdgraph_monthly.js";
+import Favourite from "../favourite component/favourite_button";
 
 class nzdrate extends Component {
   constructor(props) {
@@ -245,6 +246,9 @@ class nzdrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Nzdchartdaily />}</div>
         <div>{this.state.showdaily && <Nzdchartmonthly />}</div>
+        <div>
+          <Favourite currency="NZD" />
+        </div>
       </div>
     );
   }

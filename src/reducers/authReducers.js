@@ -6,6 +6,7 @@ const initialState = {
   isAuthenticated: false,
   user: {},
   loading: false,
+  emaildata: "",
 };
 
 export default function (state = initialState, action) {
@@ -15,6 +16,7 @@ export default function (state = initialState, action) {
         ...state,
         isAuthenticated: !isEmpty(action.payload),
         user: action.payload,
+        emaildata: action.emaildata,
       };
     case USER_LOADING:
       return {

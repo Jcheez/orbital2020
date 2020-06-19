@@ -13,13 +13,13 @@ router.post("/signup", (req, res) => {
   }
 
   users.find({ email: req.body.email }).then((user) => {
-    console.log(user);
     if (user[0]) {
       return res.status(400).json("This email has been taken by another user");
     } else {
       const newUser = new users({
         email: req.body.email,
         password: req.body.password,
+        favourites: [],
       });
       newUser
         .save()
@@ -56,6 +56,45 @@ router.post("/login", (req, res) => {
       });
     } else {
       return res.status(400).json("Incorrect email or password combination");
+    }
+  });
+});
+
+router.route("/user").get((req, res) => {
+  users
+    .find({}, { email: 1, favourites: 1, _id: 0 })
+    .then((c) => res.json(c))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.post("/userupdatefav", (req, res) => {
+  const email = req.body.email;
+  const fav = req.body.favourites;
+
+  users.findOneAndUpdate({ email }, { $push: { favourites: fav } }, function (
+    err,
+    result
+  ) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+router.post("/userdeletefav", (req, res) => {
+  const email = req.body.email;
+  const fav = req.body.favourites;
+
+  users.findOneAndUpdate({ email }, { $pull: { favourites: fav } }, function (
+    err,
+    result
+  ) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(result);
     }
   });
 });

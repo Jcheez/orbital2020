@@ -42,6 +42,7 @@ class Login extends Component {
       password: this.state.password,
     };
     this.props.loginUser(userData);
+    localStorage.setItem("email", this.state.email);
   };
   render() {
     const { errors } = this.state;

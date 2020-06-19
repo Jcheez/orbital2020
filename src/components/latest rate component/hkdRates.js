@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Hkdchartdaily from "./hkdgraph_daily";
 import HkAudchartmonthly from "./hkdgraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class hkdrate extends Component {
   constructor(props) {
@@ -211,6 +212,9 @@ class hkdrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Hkdchartdaily />}</div>
         <div>{this.state.showdaily && <HkAudchartmonthly />}</div>
+        <div>
+          <Favourite currency="HKD" />
+        </div>
       </div>
     );
   }

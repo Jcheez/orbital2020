@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Cadchartdaily from "./cadgraph_daily";
 import Cadchartmonthly from "./cadgraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class cadrate extends Component {
   constructor(props) {
@@ -211,6 +212,9 @@ class cadrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Cadchartdaily />}</div>
         <div>{this.state.showdaily && <Cadchartmonthly />}</div>
+        <div>
+          <Favourite currency="CAD" />
+        </div>
       </div>
     );
   }

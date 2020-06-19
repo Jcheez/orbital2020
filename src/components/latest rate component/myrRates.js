@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Myrchartdaily from "./myrgraph_daily";
 import Myrchartmonthly from "./myrgraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class myrrate extends Component {
   constructor(props) {
@@ -245,6 +246,9 @@ class myrrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Myrchartdaily />}</div>
         <div>{this.state.showdaily && <Myrchartmonthly />}</div>
+        <div>
+          <Favourite currency="MYR" />
+        </div>
       </div>
     );
   }

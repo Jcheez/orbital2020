@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Thbchartdaily from "./thbgraph_daily";
 import Thbchartmonthly from "./thbgraph_monthly";
+import Favourite from "../favourite component/favourite_button";
 
 class thbrate extends Component {
   constructor(props) {
@@ -245,6 +246,9 @@ class thbrate extends Component {
         </div>
         <div>{!this.state.showdaily && <Thbchartdaily />}</div>
         <div>{this.state.showdaily && <Thbchartmonthly />}</div>
+        <div>
+          <Favourite currency="THB" />
+        </div>
       </div>
     );
   }
