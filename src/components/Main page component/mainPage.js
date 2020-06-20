@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import USD from "../latest rate component/usdRates";
-import EUR from "../latest rate component/euroRates";
-import GBP from "../latest rate component/gbpRates";
-import JPY from "../latest rate component/jpyRates";
-import CNY from "../latest rate component/cnyRates";
-import AUD from "../latest rate component/audRates";
-import CAD from "../latest rate component/cadRates";
-import NZD from "../latest rate component/nzdRates";
-import HKD from "../latest rate component/hkdRates";
-import CHF from "../latest rate component/chfRates";
-import MYR from "../latest rate component/myrRates";
-import IDR from "../latest rate component/idrRates";
-import THB from "../latest rate component/thbRates";
-import KRW from "../latest rate component/krwRates";
-import NTD from "../latest rate component/ntdrates";
-import AED from "../latest rate component/aedRates";
+import USD from "./usd_table";
+import EUR from "./eur_table";
+import GBP from "./gbp_table";
+import JPY from "./jpy_table";
+import CNY from "./cny_table";
+import AUD from "./aud_table";
+import CAD from "./cad_table";
+import NZD from "./nzd_table";
+import HKD from "./hkd_table";
+import CHF from "./chf_table";
+import MYR from "./myr_table";
+import IDR from "./idr_table";
+import THB from "./thb_table";
+import KRW from "./krw_table";
+import NTD from "./ntd_table";
+import AED from "./aed_table";
 
 class mainpage extends Component {
   constructor(props) {
