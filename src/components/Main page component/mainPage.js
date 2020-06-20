@@ -97,7 +97,7 @@ class mainpage extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ paddingLeft: "20px" }}>
         <div>{this.state.USD && <USD />}</div>
         <div>{this.state.EUR && <EUR />}</div>
         <div>{this.state.GBP && <GBP />}</div>
@@ -114,6 +114,7 @@ class mainpage extends Component {
         <div>{this.state.KRW && <KRW />}</div>
         <div>{this.state.NTD && <NTD />}</div>
         <div>{this.state.AED && <AED />}</div>
+        <p>Rates are updated every half-hourly</p>
       </div>
     );
   }

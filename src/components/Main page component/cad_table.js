@@ -105,10 +105,9 @@ class cad_table extends Component {
             width: "40%",
             verticalAlign: "top",
             display: "inline-block",
-            height: "218px",
           }}
         >
-          <table className="table table-bordered" style={{ marginTop: "20px" }}>
+          <table className="table table-bordered" style={{ marginTop: "5px" }}>
             <thead>
               <tr>
                 <th scope="col">Currency</th>
@@ -124,12 +123,12 @@ class cad_table extends Component {
                 <td>{this.state.rates2}</td>
                 <td>{this.state.rates3}</td>
               </tr>
-              <tr>
+              {/* <tr>
                 <td colspan="4">
                   Last updated on {this.state.Date1} at{" "}
                   {this.state.timeRecorded} Singapore Time (GMT+8)
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>
