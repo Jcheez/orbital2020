@@ -19,8 +19,8 @@ class Welcome extends Component {
               <Link
                 to="/signup"
                 style={{
-                  width: "684px",
-                  borderRadius: "3px",
+                  width: "1105px",
+                  borderRadius: "1px",
                   letterSpacing: "1.5px",
                 }}
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
@@ -40,8 +40,8 @@ class Welcome extends Component {
               <Link
                 to="/login"
                 style={{
-                  width: "684px",
-                  borderRadius: "3px",
+                  width: "1105px",
+                  borderRadius: "1px",
                   letterSpacing: "1.5px",
                 }}
                 className="btn btn-large btn-flat waves-effect white black-text"
