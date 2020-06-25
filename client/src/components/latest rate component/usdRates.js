@@ -49,12 +49,15 @@ class usdrate extends Component {
         var previous_date = Day - 1 + "/" + Month_str + "/" + Year;
 
         var data_array = [];
-        for (let i = 0, len = response.data.length; i < len; i++) {
-          let curr_date = response.data[i].Date;
-          if (curr_date === today_date) {
-            data_array.push(response.data[i]);
-          }
+        // for (let i = 0, len = response.data.length; i < len; i++) {
+        let len = response.data.length;
+        let curr_date = response.data[len - 1].Date;
+        if (curr_date === today_date) {
+          data_array.push(response.data[len - 1]);
+          data_array.push(response.data[len - 2]);
+          data_array.push(response.data[len - 3]);
         }
+        // }
 
         if (data_array.length === 0) {
           for (let i = 0, len = response.data.length; i < len; i++) {
