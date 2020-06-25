@@ -24,7 +24,7 @@ class nzd_table extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/NZD")
+      .get("/currencies/NZD")
       .then((response) => {
         var today = new Date();
 

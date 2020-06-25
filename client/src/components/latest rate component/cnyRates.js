@@ -32,7 +32,7 @@ class cnyrate extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/CNY")
+      .get("/currencies/CNY")
       .then((response) => {
         var today = new Date();
 

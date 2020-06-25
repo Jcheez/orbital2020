@@ -32,7 +32,7 @@ class chfrate extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/CHF")
+      .get("/currencies/CHF")
       .then((response) => {
         var today = new Date();
 

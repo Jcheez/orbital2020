@@ -18,7 +18,7 @@ class fav_button extends Component {
   }
 
   componentDidMount() {
-    Axios.get("http://localhost:5000/users/user")
+    Axios.get("/users/user")
       .then((response) => {
         var curr_email = localStorage.getItem("email");
         var data_array = [];
@@ -58,7 +58,7 @@ class fav_button extends Component {
 
   button_function() {
     if (this.state.added) {
-      Axios.post("http://localhost:5000/users/userdeletefav", {
+      Axios.post("/users/userdeletefav", {
         email: this.state.email,
         favourites: this.props.currency,
       });
@@ -66,7 +66,7 @@ class fav_button extends Component {
         added: false,
       });
     } else {
-      Axios.post("http://localhost:5000/users/userupdatefav", {
+      Axios.post("/users/userupdatefav", {
         email: this.state.email,
         favourites: this.props.currency,
       });

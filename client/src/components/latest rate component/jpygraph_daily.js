@@ -12,7 +12,7 @@ class jpychart extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/JPY")
+      .get("/currencies/JPY")
       .then((response) => {
         var today = new Date();
 

@@ -13,7 +13,7 @@ class krwchart_m extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/KRW")
+      .get("/currencies/KRW")
       .then((response) => {
         var today = new Date();
 

@@ -12,7 +12,7 @@ class hkdchart extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/HKD")
+      .get("/currencies/HKD")
       .then((response) => {
         var today = new Date();
 

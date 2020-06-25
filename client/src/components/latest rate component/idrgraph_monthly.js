@@ -13,7 +13,7 @@ class idrchart_m extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/IDR")
+      .get("/currencies/IDR")
       .then((response) => {
         var today = new Date();
 

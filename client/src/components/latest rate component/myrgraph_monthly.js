@@ -13,7 +13,7 @@ class myrchart_m extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/MYR")
+      .get("/currencies/MYR")
       .then((response) => {
         var today = new Date();
 

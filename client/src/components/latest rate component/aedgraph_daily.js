@@ -12,7 +12,7 @@ class aedchart extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/AED")
+      .get("/currencies/AED")
       .then((response) => {
         var today = new Date();
 

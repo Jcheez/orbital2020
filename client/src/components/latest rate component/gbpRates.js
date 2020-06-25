@@ -32,7 +32,7 @@ class gbprate extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/GBP")
+      .get("/currencies/GBP")
       .then((response) => {
         var today = new Date();
 

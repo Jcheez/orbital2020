@@ -13,7 +13,7 @@ class eurchart_m extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/EUR")
+      .get("/currencies/EUR")
       .then((response) => {
         var today = new Date();
 

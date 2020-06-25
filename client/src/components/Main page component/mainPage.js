@@ -41,7 +41,7 @@ class mainpage extends Component {
   }
 
   componentDidMount() {
-    Axios.get("http://localhost:5000/users/user")
+    Axios.get("/users/user")
       .then((response) => {
         var curr_email = localStorage.getItem("email");
         var data_array = [];

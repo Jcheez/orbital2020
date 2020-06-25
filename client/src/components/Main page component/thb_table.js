@@ -24,7 +24,7 @@ class thb_table extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/THB")
+      .get("/currencies/THB")
       .then((response) => {
         var today = new Date();
 

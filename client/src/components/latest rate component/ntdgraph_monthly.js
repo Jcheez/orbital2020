@@ -13,7 +13,7 @@ class ntdchart_m extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/NTD")
+      .get("/currencies/NTD")
       .then((response) => {
         var today = new Date();
 

@@ -12,7 +12,7 @@ class cadchart extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/CAD")
+      .get("/currencies/CAD")
       .then((response) => {
         var today = new Date();
 

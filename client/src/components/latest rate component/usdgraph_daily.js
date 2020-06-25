@@ -12,7 +12,7 @@ class usdchart extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/currencies/USD")
+      .get("/currencies/USD")
       .then((response) => {
         var today = new Date();
 
