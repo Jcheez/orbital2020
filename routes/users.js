@@ -40,27 +40,30 @@ router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  users.find({ email }).then((user) => {
-    if (!user) {
-      errors.email = "Email not registered yet";
-      return res.status(400).json(errors);
-    }
-    if (email === user[0].email && password === user[0].password) {
-      const payload = {
-        id: user.id,
-        email: user.email,
-      };
-      jwt.sign(payload, "secret", { expiresIn: 86400 }, (err, token) => {
-        res.json({
-          success: true,
-          token: "Bearer " + token,
+  users
+    .find({ email })
+    .then((user) => {
+      if (!user) {
+        errors.email1 = "Email not registered yet";
+        return res.status(400).json(errors);
+      }
+      if (email === user[0].email && password === user[0].password) {
+        const payload = {
+          id: user.id,
+          email: user.email,
+        };
+        jwt.sign(payload, "secret", { expiresIn: 86400 }, (err, token) => {
+          res.json({
+            success: true,
+            token: "Bearer " + token,
+          });
         });
-      });
-    } else {
-      errors.password("Incorrect email or password combination");
-      return res.status(400).json(errors);
-    }
-  });
+      } else {
+        errors.password1 = "Incorrect email or password combination";
+        return res.status(400).json(errors);
+      }
+    })
+    .catch((err) => console.log(err));
 });
 
 router.route("/user").get((req, res) => {
