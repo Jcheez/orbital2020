@@ -29,16 +29,21 @@ class idr_table extends Component {
         var today = new Date();
 
         var Day = today.getDate();
+        var Day_str = Day.toString();
         var Month = today.getMonth() + 1;
         var Month_str = Month.toString();
         var Year = today.getFullYear();
+
+        if (Day_str.length === 1) {
+          Day_str = "0" + Day_str;
+        }
 
         if (Month_str.length === 1) {
           Month_str = "0" + Month_str;
         }
 
-        var today_date = Day + "/" + Month_str + "/" + Year;
-        var previous_date = Day - 1 + "/" + Month_str + "/" + Year;
+        var today_date = Day_str + "/" + Month_str + "/" + Year;
+        var previous_date = Day_str - 1 + "/" + Month_str + "/" + Year;
 
         var data_array = [];
         for (let i = 0, len = response.data.length; i < len; i++) {
