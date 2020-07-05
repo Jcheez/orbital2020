@@ -5,7 +5,16 @@ class tutorial extends Component {
   render() {
     return (
       <div>
-        <p>This is the tutorial component</p>
+        <img
+          src="/tutorial_images/tutorial-page1.jpg"
+          height="800px"
+          alt=""
+        ></img>
+        <img
+          src="/tutorial_images/tutorial-page2.jpg"
+          height="800px"
+          alt=""
+        ></img>
       </div>
     );
   }

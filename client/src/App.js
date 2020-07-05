@@ -5,7 +5,11 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import PrivateRoute from "./components/privateRoute";
+
 import Home from "./components/home component/home";
+import Tutorial from "./Refreshed components/tutorial2";
+import Latest from "./Refreshed components/latestRates2";
+import Logout from "./Refreshed components/logout2";
 
 import Welcome from "./components/welcome page component/welcome";
 import Signup from "./components/signup component/signup";
@@ -35,6 +39,9 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Switch>
           <PrivateRoute exact path="/home" component={Home} />
+          <PrivateRoute exact path="/home/tutorial" component={Tutorial} />
+          <PrivateRoute exact path="/home/latestRates" component={Latest} />
+          <PrivateRoute exact path="/home/logout" component={Logout} />
         </Switch>
       </Router>
     </Provider>
