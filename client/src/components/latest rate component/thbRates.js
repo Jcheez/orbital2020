@@ -185,7 +185,13 @@ class thbrate extends Component {
     if (this.state.showdaily === true) {
       this.setState({ showdaily: false, button_text: "Daily" });
     } else {
-      this.setState({ showdaily: true, button_text: "Current Month" });
+      this.setState({ showdaily: true, button_text: "Monthly" });
+    }
+  };
+
+  onKeyPress = (e) => {
+    if (e.which === 13 /* Enter */) {
+      e.preventDefault();
     }
   };
 
@@ -243,7 +249,7 @@ class thbrate extends Component {
           <table className="table size=sm">
             <tr>
               <td>
-                <form>
+                <form onKeyPress={this.onKeyPress}>
                   <input type="number" onChange={this.newAmount} min="0" /> THB
                   ≈{" "}
                   {(this.state.bestrate * this.state.newAmount).toPrecision(6)}{" "}
@@ -254,10 +260,14 @@ class thbrate extends Component {
             <tr>
               {" "}
               <td>
-                <form>
+                <form onKeyPress={this.onKeyPress}>
                   <input type="number" onChange={this.newAmount1} min="0" /> SGD
                   ≈{" "}
-                  {(this.state.newAmount1 / this.state.bestrate).toPrecision(6)}{" "}
+                  {this.state.bestrate
+                    ? (this.state.newAmount1 / this.state.bestrate).toPrecision(
+                        6
+                      )
+                    : (0.0).toPrecision(6)}{" "}
                   THB
                 </form>
               </td>
