@@ -98,6 +98,13 @@ class mainpage extends Component {
   render() {
     return (
       <div style={{ paddingLeft: "20px" }}>
+        <h4>Welcome to Foreign Exchange Rate Monitoring System</h4>
+        <hr></hr>
+        <h6>Your favourite currencies appear here</h6>
+        <p>
+          Rates are updated every half-hourly. For more details, visit the
+          latest rates tab.
+        </p>
         <div>{this.state.USD && <USD />}</div>
         <div>{this.state.EUR && <EUR />}</div>
         <div>{this.state.GBP && <GBP />}</div>
@@ -114,7 +121,15 @@ class mainpage extends Component {
         <div>{this.state.KRW && <KRW />}</div>
         <div>{this.state.NTD && <NTD />}</div>
         <div>{this.state.AED && <AED />}</div>
-        <p>Rates are updated every half-hourly</p>
+        <hr></hr>
+        <p>
+          <strong>Cant understand the rates presented?</strong>
+          <br></br>
+          It is the amount of Singapore Dollar(s) you need to exchange for 1
+          dollar of your desired foreign currency.
+          <br></br>
+          In layman terms, the lower the rate, the more benefical it is for you.
+        </p>
       </div>
     );
   }

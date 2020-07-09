@@ -212,7 +212,9 @@ class usdrate extends Component {
             </thead>
             <tbody>
               <tr>
-                <th scope="row">USD</th>
+                <th scope="row">
+                  USD {"  "} <Favourite currency="USD" />
+                </th>
                 <td>{this.state.rates1}</td>
                 <td>{this.state.rates2}</td>
                 <td>{this.state.rates3}</td>
@@ -268,6 +270,7 @@ class usdrate extends Component {
             </tr>
           </table>
         </div>
+
         <div>
           <p>
             Click{" "}
@@ -280,9 +283,6 @@ class usdrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Usdchartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="USD" />
         </div>
       </div>
     );

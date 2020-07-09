@@ -9,8 +9,8 @@ class latestRate extends Component {
         <Dropdown />
         <br />
         <p>
-          Disclaimer: Please Double confirm the rates with your bank before
-          making any transactions. We will not be responsible for any
+          <strong>Disclaimer:</strong> Please confirm the rates with your bank
+          before making any transactions. We are not responsible for any
           discrepancies in rates.
         </p>
       </div>
