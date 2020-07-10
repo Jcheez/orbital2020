@@ -192,6 +192,12 @@ class jpyrate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Favourite currency="JPY" />
+        </div>
         <div
           className="ib"
           style={{
@@ -280,9 +286,6 @@ class jpyrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Jpychartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="JPY" />
         </div>
       </div>
     );

@@ -192,6 +192,9 @@ class ntdrate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <Favourite currency="NTD" />
+        </div>
         <div
           className="ib"
           style={{
@@ -280,9 +283,6 @@ class ntdrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Ntdchartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="NTD" />
         </div>
       </div>
     );

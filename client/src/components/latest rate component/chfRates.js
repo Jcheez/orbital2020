@@ -164,6 +164,12 @@ class chfrate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Favourite currency="CHF" />
+        </div>
         <div
           className="ib"
           style={{
@@ -252,9 +258,6 @@ class chfrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Chfchartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="CHF" />
         </div>
       </div>
     );

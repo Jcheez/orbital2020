@@ -158,6 +158,12 @@ class gbprate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Favourite currency="GBP" />
+        </div>
         <div
           className="ib"
           style={{
@@ -246,9 +252,6 @@ class gbprate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Gbpchartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="GBP" />
         </div>
       </div>
     );

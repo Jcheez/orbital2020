@@ -158,6 +158,12 @@ class audrate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Favourite currency="AUD" />
+        </div>
         <div
           className="ib"
           style={{
@@ -246,9 +252,6 @@ class audrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Audchartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="AUD" />
         </div>
       </div>
     );

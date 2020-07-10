@@ -158,6 +158,12 @@ class hkdrate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Favourite currency="HKD" />
+        </div>
         <div
           className="ib"
           style={{
@@ -246,9 +252,6 @@ class hkdrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Hkdchartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="HKD" />
         </div>
       </div>
     );

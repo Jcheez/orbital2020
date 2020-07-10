@@ -158,6 +158,12 @@ class eurorate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Favourite currency="EUR" />
+        </div>
         <div
           className="ib"
           style={{

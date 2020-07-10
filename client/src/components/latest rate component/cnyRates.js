@@ -192,6 +192,12 @@ class cnyrate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Favourite currency="CNY" />
+        </div>
         <div
           className="ib"
           style={{
@@ -280,9 +286,6 @@ class cnyrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Cnychartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="CNY" />
         </div>
       </div>
     );

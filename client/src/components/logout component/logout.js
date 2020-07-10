@@ -13,9 +13,20 @@ class logout extends Component {
 
   render() {
     return (
-      <Button variant="primary" onClick={this.onLogoutClick} size="lg">
-        Logout
-      </Button>
+      <div>
+        <div>
+          <br></br>
+        </div>
+        <div
+          style={{
+            paddingLeft: "10px",
+          }}
+        >
+          <Button variant="primary" onClick={this.onLogoutClick} size="lg">
+            Logout
+          </Button>
+        </div>
+      </div>
     );
   }
 }

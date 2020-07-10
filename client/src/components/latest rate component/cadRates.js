@@ -158,6 +158,12 @@ class cadrate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Favourite currency="CAD" />
+        </div>
         <div
           className="ib"
           style={{
@@ -246,9 +252,6 @@ class cadrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Cadchartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="CAD" />
         </div>
       </div>
     );

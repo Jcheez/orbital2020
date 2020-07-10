@@ -198,6 +198,9 @@ class thbrate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <Favourite currency="THB" />
+        </div>
         <div
           className="ib"
           style={{
@@ -286,9 +289,6 @@ class thbrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Thbchartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="THB" />
         </div>
       </div>
     );

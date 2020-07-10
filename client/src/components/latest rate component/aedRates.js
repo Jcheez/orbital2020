@@ -164,6 +164,12 @@ class aedrate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Favourite currency="AED" />
+        </div>
         <div
           className="ib"
           style={{
@@ -252,9 +258,6 @@ class aedrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Aedchartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="AED" />
         </div>
       </div>
     );

@@ -192,6 +192,12 @@ class usdrate extends Component {
   render() {
     return (
       <div>
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Favourite currency="USD" />
+        </div>
         <div
           className="ib"
           style={{
@@ -286,9 +292,6 @@ class usdrate extends Component {
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Usdchartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="USD" />
         </div>
       </div>
     );
