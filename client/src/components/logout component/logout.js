@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 
+import Button from "react-bootstrap/Button";
+
 class logout extends Component {
   onLogoutClick = (e) => {
     e.preventDefault();
@@ -11,18 +13,9 @@ class logout extends Component {
 
   render() {
     return (
-      <button
-        style={{
-          width: "150px",
-          borderRadius: "3px",
-          letterSpacing: "1.5px",
-          marginTop: "1rem",
-        }}
-        onClick={this.onLogoutClick}
-        className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-      >
+      <Button variant="primary" onClick={this.onLogoutClick} size="lg">
         Logout
-      </button>
+      </Button>
     );
   }
 }

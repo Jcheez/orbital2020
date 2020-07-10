@@ -16,6 +16,8 @@ import Krwrate from "../krwRates";
 import Ntdrate from "../ntdrates";
 import Aedrate from "../aedRates";
 
+import Dropdown from "react-bootstrap/Dropdown";
+
 class dropdownbar extends Component {
   constructor(props) {
     super(props);
@@ -39,137 +41,340 @@ class dropdownbar extends Component {
       isEmptyStateNtd: false,
       isEmptyStateAed: false,
     };
-
-    this.showmenu = this.showmenu.bind(this);
-    this.closemenu = this.closemenu.bind(this);
-  }
-
-  showmenu(event) {
-    event.preventDefault();
-    this.setState(
-      {
-        dropdown: true,
-        isEmptyStateUSD: false,
-        isEmptyStateEuro: false,
-        isEmptyStateGbp: false,
-        isEmptyStateJpy: false,
-        isEmptyStateCny: false,
-        isEmptyStateAud: false,
-        isEmptyStateCad: false,
-        isEmptyStateNzd: false,
-        isEmptyStateHkd: false,
-        isEmptyStateChf: false,
-        isEmptyStateMyr: false,
-        isEmptyStateIdr: false,
-        isEmptyStateThb: false,
-        isEmptyStateKrw: false,
-        isEmptyStateNtd: false,
-        isEmptyStateAed: false,
-      },
-      () => {
-        document.addEventListener("click", this.closemenu);
-      }
-    );
-  }
-
-  closemenu() {
-    this.setState({ dropdown: false }, () => {
-      document.removeEventListener("click", this.closemenu);
-    });
   }
 
   showUSD = () => {
     this.setState({
       isEmptyStateUSD: true,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showEuro = () => {
     this.setState({
+      isEmptyStateUSD: false,
       isEmptyStateEuro: true,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showGbp = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
       isEmptyStateGbp: true,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showJpy = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
       isEmptyStateJpy: true,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showCny = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
       isEmptyStateCny: true,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showAud = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
       isEmptyStateAud: true,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showCad = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
       isEmptyStateCad: true,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showNzd = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
       isEmptyStateNzd: true,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showHkd = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
       isEmptyStateHkd: true,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showChf = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
       isEmptyStateChf: true,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showMyr = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
       isEmptyStateMyr: true,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showIdr = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
       isEmptyStateIdr: true,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showThb = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
       isEmptyStateThb: true,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showKrw = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
       isEmptyStateKrw: true,
+      isEmptyStateNtd: false,
+      isEmptyStateAed: false,
     });
   };
 
   showNtd = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
       isEmptyStateNtd: true,
+      isEmptyStateAed: false,
     });
   };
 
   showAed = () => {
     this.setState({
+      isEmptyStateUSD: false,
+      isEmptyStateEuro: false,
+      isEmptyStateGbp: false,
+      isEmptyStateJpy: false,
+      isEmptyStateCny: false,
+      isEmptyStateAud: false,
+      isEmptyStateCad: false,
+      isEmptyStateNzd: false,
+      isEmptyStateHkd: false,
+      isEmptyStateChf: false,
+      isEmptyStateMyr: false,
+      isEmptyStateIdr: false,
+      isEmptyStateThb: false,
+      isEmptyStateKrw: false,
+      isEmptyStateNtd: false,
       isEmptyStateAed: true,
     });
   };
@@ -177,38 +382,52 @@ class dropdownbar extends Component {
   render() {
     return (
       <div>
-        <div
-          className="dropdownmenu"
-          style={{
-            background: "#fff",
-            width: "200px",
-            border: "1px solid #ccc",
-            borderradius: "6px",
-          }}
-        >
-          <div className="button" onClick={this.showmenu}>
-            List of Currencies ▼
-          </div>
-          {this.state.dropdown ? (
-            <ul>
-              <option onClick={this.showUSD}>US Dollar</option>
-              <option onClick={this.showEuro}>Euro</option>
-              <option onClick={this.showGbp}>Sterling Pound</option>
-              <option onClick={this.showJpy}>Japanese Yen</option>
-              <option onClick={this.showCny}>Chinese Renminbi</option>
-              <option onClick={this.showAud}>Australian Dollar</option>
-              <option onClick={this.showCad}>Canadian Dollar</option>
-              <option onClick={this.showNzd}>New Zealand Dollar</option>
-              <option onClick={this.showHkd}>Hong Kong Dollar</option>
-              <option onClick={this.showChf}>Swiss Franc</option>
-              <option onClick={this.showMyr}>Malaysian Ringgit</option>
-              <option onClick={this.showIdr}>Indonesian Rupiah</option>
-              <option onClick={this.showThb}>Thai Baht</option>
-              <option onClick={this.showKrw}>Korean Won</option>
-              <option onClick={this.showNtd}>New Taiwan Dollar</option>
-              <option onClick={this.showAed}>UAE Dirham</option>
-            </ul>
-          ) : null}
+        <div>
+          <br></br>
+        </div>
+        <div>
+          <Dropdown>
+            <Dropdown.Toggle variant="primary" id="dropdown-basic">
+              List of Currencies
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={this.showUSD}>US Dollar</Dropdown.Item>
+              <Dropdown.Item onClick={this.showEuro}>Euro</Dropdown.Item>
+              <Dropdown.Item onClick={this.showGbp}>
+                Sterling Pound
+              </Dropdown.Item>
+              <Dropdown.Item onClick={this.showJpy}>Japanese Yen</Dropdown.Item>
+              <Dropdown.Item onClick={this.showCny}>
+                Chinese Renminbi
+              </Dropdown.Item>
+              <Dropdown.Item onClick={this.showAud}>
+                Australian Dollar
+              </Dropdown.Item>
+              <Dropdown.Item onClick={this.showCad}>
+                Canadian Dollar
+              </Dropdown.Item>
+              <Dropdown.Item onClick={this.showNzd}>
+                New Zealand Dollar
+              </Dropdown.Item>
+              <Dropdown.Item onClick={this.showHkd}>
+                Hong Kong Dollar
+              </Dropdown.Item>
+              <Dropdown.Item onClick={this.showChf}>Swiss Franc</Dropdown.Item>
+              <Dropdown.Item onClick={this.showMyr}>
+                Malaysian Ringgit
+              </Dropdown.Item>
+              <Dropdown.Item onClick={this.showIdr}>
+                Indonesian Rupiah
+              </Dropdown.Item>
+              <Dropdown.Item onClick={this.showThb}>Thai Baht</Dropdown.Item>
+              <Dropdown.Item onClick={this.showKrw}>Korean Won</Dropdown.Item>
+              <Dropdown.Item onClick={this.showNtd}>
+                New Taiwan Dollar
+              </Dropdown.Item>
+              <Dropdown.Item onClick={this.showAed}>UAE Dirham</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
         <div>{this.state.isEmptyStateUSD && <Usdrate />}</div>
         <div>{this.state.isEmptyStateEuro && <Eurorate />}</div>

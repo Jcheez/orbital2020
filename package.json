@@ -30,11 +30,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "popper.js": "^1.16.1",
-<<<<<<< HEAD
-    "react-bootstrap": "^1.0.1",
-=======
     "react-icons": "^3.10.0",
->>>>>>> b51489eb407b5f180088569ab2d4440e1fb47744
     "validator": "^13.0.0"
   }
 }

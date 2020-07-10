@@ -3,18 +3,23 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import Axios from "axios";
 
+import Button from "react-bootstrap/Button";
+
 class fav_button extends Component {
   constructor(props) {
     super(props);
     this.state = {
       text1: "Add to Favourites",
       text2: "Added to favourites",
+      text3: "outline-success",
+      text4: "outline-primary",
       favourites: [],
       added: "",
       email: "",
     };
     this.logger = this.logger.bind(this);
     this.button_function = this.button_function.bind(this);
+    this.outline_text = this.outline_text.bind(this);
   }
 
   componentDidMount() {
@@ -84,8 +89,20 @@ class fav_button extends Component {
     }
   }
 
+  outline_text() {
+    if (this.state.added) {
+      return this.state.text3;
+    } else {
+      return this.state.text4;
+    }
+  }
+
   render() {
-    return <button onClick={this.button_function}>{this.button_text()}</button>;
+    return (
+      <Button variant={this.outline_text()} onClick={this.button_function}>
+        {this.button_text()}
+      </Button>
+    );
   }
 }
 
