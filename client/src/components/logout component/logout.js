@@ -19,7 +19,7 @@ class logout extends Component {
         </div>
         <div
           style={{
-            paddingLeft: "10px",
+            paddingLeft: "20px",
           }}
         >
           <Button variant="primary" onClick={this.onLogoutClick} size="lg">
