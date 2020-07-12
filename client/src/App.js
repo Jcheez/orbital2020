@@ -17,6 +17,7 @@ import Login from "./components/login component/login";
 
 import { Provider } from "react-redux";
 import store from "./store";
+import "./App.css";
 
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken;
