@@ -9,8 +9,10 @@ class Welcome extends Component {
     return (
       <div
         style={{
-          height: "75vh",
           marginTop: "150px",
+          backgroundImage: "url(/tutorial_images/welcome.jpg)",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat",
         }}
         className="container valign-wrapper"
       >
