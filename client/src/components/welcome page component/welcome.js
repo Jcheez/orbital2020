@@ -10,9 +10,6 @@ class Welcome extends Component {
       <div
         style={{
           marginTop: "150px",
-          backgroundImage: "url(/tutorial_images/welcome.jpg)",
-          backgroundPosition: "center",
-          backgroundRepeat: "repeat",
         }}
         className="container valign-wrapper"
       >

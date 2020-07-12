@@ -5,6 +5,8 @@ import Eurochartdaily from "./eurograph_daily";
 import Eurochartmonthly from "./eurograph_monthly";
 import Favourite from "../favourite component/favourite_button";
 
+import Button from "react-bootstrap/Button";
+
 class eurorate extends Component {
   constructor(props) {
     super(props);
@@ -246,20 +248,15 @@ class eurorate extends Component {
         <h3>Chart</h3>
         <br></br>
         <div>
-          <p>
-            Click{" "}
-            <button onClick={this.show_chart}>{this.state.button_text}</button>{" "}
-            to toggle between the daily chart and monthly chart!
-          </p>
+          <Button onClick={this.show_chart} variant="outline-info">
+            {this.state.button_text}
+          </Button>
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {!this.state.showdaily && <Eurochartdaily />}
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {this.state.showdaily && <Eurochartmonthly />}
-        </div>
-        <div>
-          <Favourite currency="EUR" />
         </div>
       </div>
     );

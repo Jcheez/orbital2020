@@ -5,6 +5,8 @@ import Thbchartdaily from "./thbgraph_daily";
 import Thbchartmonthly from "./thbgraph_monthly";
 import Favourite from "../favourite component/favourite_button";
 
+import Button from "react-bootstrap/Button";
+
 class thbrate extends Component {
   constructor(props) {
     super(props);
@@ -283,11 +285,9 @@ class thbrate extends Component {
           </table>
         </div>
         <div>
-          <p>
-            Click{" "}
-            <button onClick={this.show_chart}>{this.state.button_text}</button>{" "}
-            to toggle between the daily chart and monthly chart!
-          </p>
+          <Button onClick={this.show_chart} variant="outline-info">
+            {this.state.button_text}
+          </Button>
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {!this.state.showdaily && <Thbchartdaily />}
