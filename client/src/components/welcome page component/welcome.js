@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
+import "./welcome.css";
 
 class Welcome extends Component {
   render() {
@@ -9,6 +10,7 @@ class Welcome extends Component {
       <div
         style={{
           height: "75vh",
+          marginTop: "150px",
         }}
         className="container valign-wrapper"
       >
@@ -23,7 +25,7 @@ class Welcome extends Component {
             Welcome to Foreign Exchange Rates Monitoring System (FERMS)
           </p>
           <br></br>
-          <p style={{ fontSize: "20px" }}>
+          <p style={{ fontSize: "20px", marginLeft: "82px" }}>
             With Ferms, you can:
             <ol>
               <li>
@@ -44,7 +46,7 @@ class Welcome extends Component {
         <div className="row">
           <div className="col s12 center-align" style={{ textAlign: "center" }}>
             <Button
-              variant="primary"
+              variant="outline-primary"
               style={{ marginRight: "150px", marginTop: "100px" }}
               size="lg"
             >
