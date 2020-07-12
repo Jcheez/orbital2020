@@ -198,6 +198,8 @@ class usdrate extends Component {
         <div>
           <Favourite currency="USD" />
         </div>
+        <hr></hr>
+        <h3>Latest Rate, Conversion Calculator</h3>
         <div
           className="ib"
           style={{
@@ -274,12 +276,9 @@ class usdrate extends Component {
             </tr>
           </table>
         </div>
-        <div>
-          <br></br>
-        </div>
-        <div>
-          <br></br>
-        </div>
+        <hr></hr>
+        <h3>Chart</h3>
+        <br></br>
         <div>
           <p>
             Click{" "}

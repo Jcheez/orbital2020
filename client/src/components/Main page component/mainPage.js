@@ -97,10 +97,10 @@ class mainpage extends Component {
 
   render() {
     return (
-      <div style={{ paddingLeft: "20px" }}>
+      <div style={{ paddingLeft: "20px", paddingRight: "20px" }}>
         <h4>Welcome to Foreign Exchange Rate Monitoring System</h4>
         <hr></hr>
-        <h6>Your favourite currencies appear here</h6>
+        <h5>Your favourite currencies appear here</h5>
         <p>
           Rates are updated every half-hourly. For more details, visit the
           latest rates tab.
@@ -123,7 +123,7 @@ class mainpage extends Component {
         <div>{this.state.AED && <AED />}</div>
         <hr></hr>
         <p>
-          <strong>Cant understand the rates presented?</strong>
+          <b>Cant understand the rates presented?</b>
           <br></br>
           It is the amount of Singapore Dollar(s) you need to exchange for 1
           dollar of your desired foreign currency.

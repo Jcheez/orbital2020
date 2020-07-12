@@ -193,8 +193,13 @@ class ntdrate extends Component {
     return (
       <div>
         <div>
+          <br></br>
+        </div>
+        <div>
           <Favourite currency="NTD" />
         </div>
+        <hr></hr>
+        <h3>Latest Rate, Conversion Calculator</h3>
         <div
           className="ib"
           style={{
@@ -271,6 +276,9 @@ class ntdrate extends Component {
             </tr>
           </table>
         </div>
+        <hr></hr>
+        <h3>Chart</h3>
+        <br></br>
         <div>
           <p>
             Click{" "}

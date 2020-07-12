@@ -164,6 +164,8 @@ class eurorate extends Component {
         <div>
           <Favourite currency="EUR" />
         </div>
+        <hr></hr>
+        <h3>Latest Rate, Conversion Calculator</h3>
         <div
           className="ib"
           style={{
@@ -240,6 +242,9 @@ class eurorate extends Component {
             </tr>
           </table>
         </div>
+        <hr></hr>
+        <h3>Chart</h3>
+        <br></br>
         <div>
           <p>
             Click{" "}

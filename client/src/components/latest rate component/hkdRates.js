@@ -164,6 +164,8 @@ class hkdrate extends Component {
         <div>
           <Favourite currency="HKD" />
         </div>
+        <hr></hr>
+        <h3>Latest Rate, Conversion Calculator</h3>
         <div
           className="ib"
           style={{
@@ -240,6 +242,9 @@ class hkdrate extends Component {
             </tr>
           </table>
         </div>
+        <hr></hr>
+        <h3>Chart</h3>
+        <br></br>
         <div>
           <p>
             Click{" "}

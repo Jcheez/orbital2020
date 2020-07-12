@@ -199,8 +199,13 @@ class thbrate extends Component {
     return (
       <div>
         <div>
+          <br></br>
+        </div>
+        <div>
           <Favourite currency="THB" />
         </div>
+        <hr></hr>
+        <h3>Latest Rate, Conversion Calculator</h3>
         <div
           className="ib"
           style={{
