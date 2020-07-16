@@ -14,7 +14,7 @@ class Navbar extends Component {
           </Link>
         </div>
 
-        <div className="collapse navbar-collapse">
+        <div className="navbar-nav mr-auto">
           <ul className="navbar-nav mr-auto">
             <li className="navbar-item">
               <Link to="/home/tutorial" className="nav-link">

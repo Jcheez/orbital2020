@@ -111,6 +111,7 @@ class audchart_m extends Component {
                 backgroundColor: ["rgba(255, 255, 255, 0)"],
                 borderColor: ["rgba(255, 159, 64, 1)"],
                 borderWidth: 1,
+                lineTension: 0.1,
                 labels: dbs_timedates,
               },
               {
@@ -119,6 +120,7 @@ class audchart_m extends Component {
                 backgroundColor: ["rgba(255, 255, 255, 0)"],
                 borderColor: ["rgba(63, 191, 127, 1)"],
                 borderWidth: 1,
+                lineTension: 0.1,
                 labels: uob_timedates,
               },
               {
@@ -127,6 +129,7 @@ class audchart_m extends Component {
                 backgroundColor: ["rgba(255, 255, 255, 0)"],
                 borderColor: ["rgba(191, 63, 63, 1)"],
                 borderWidth: 1,
+                lineTension: 0.1,
                 labels: ocbc_timedates,
               },
             ],
