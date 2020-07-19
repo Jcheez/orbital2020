@@ -6,6 +6,7 @@ import Usdchartmonthly from "./usdgraph_monthly";
 import Favourite from "../favourite component/favourite_button";
 
 import Button from "react-bootstrap/Button";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 class usdrate extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class usdrate extends Component {
       newAmount: "",
       newAmount1: "",
       showdaily: false,
-      button_text: "Daily",
+      header_text: "Chart (Daily)",
     };
   }
 
@@ -177,12 +178,12 @@ class usdrate extends Component {
     this.setState({ newAmount1: event.target.value });
   };
 
-  show_chart = () => {
-    if (this.state.showdaily === true) {
-      this.setState({ showdaily: false, button_text: "Daily" });
-    } else {
-      this.setState({ showdaily: true, button_text: "Monthly" });
-    }
+  show_chart_daily = () => {
+    this.setState({ showdaily: false, header_text: "Chart (Daily)" });
+  };
+
+  show_chart_monthly = () => {
+    this.setState({ showdaily: true, header_text: "Chart (Monthly)" });
   };
 
   onKeyPress = (e) => {
@@ -279,12 +280,17 @@ class usdrate extends Component {
           </table>
         </div>
         <hr></hr>
-        <h3>Chart</h3>
+        <h3>{this.state.header_text}</h3>
         <br></br>
         <div>
-          <Button onClick={this.show_chart} variant="outline-info">
-            {this.state.button_text}
-          </Button>
+          <ButtonGroup aria-label="Basic example">
+            <Button variant="outline-info" onClick={this.show_chart_daily}>
+              Daily
+            </Button>
+            <Button variant="outline-info" onClick={this.show_chart_monthly}>
+              Monthly
+            </Button>
+          </ButtonGroup>
         </div>
         <div style={{ paddingRight: "20px", height: "80%" }}>
           {!this.state.showdaily && <Usdchartdaily />}

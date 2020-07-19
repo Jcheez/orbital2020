@@ -113,6 +113,7 @@ class myrchart_m extends Component {
                 borderWidth: 1,
                 lineTension: 0.1,
                 labels: dbs_timedates,
+                fill: false,
               },
               {
                 label: "UOB",
@@ -122,6 +123,7 @@ class myrchart_m extends Component {
                 borderWidth: 1,
                 lineTension: 0.1,
                 labels: uob_timedates,
+                fill: false,
               },
               {
                 label: "OCBC",
@@ -131,6 +133,7 @@ class myrchart_m extends Component {
                 borderWidth: 1,
                 lineTension: 0.1,
                 labels: ocbc_timedates,
+                fill: false,
               },
             ],
           },

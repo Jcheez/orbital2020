@@ -101,6 +101,7 @@ class jpychart extends Component {
                 borderColor: ["rgba(255, 159, 64, 1)"],
                 borderWidth: 1,
                 lineTension: 0.1,
+                fill: false,
               },
               {
                 label: "UOB",
@@ -109,6 +110,7 @@ class jpychart extends Component {
                 borderColor: ["rgba(63, 191, 127, 1)"],
                 borderWidth: 1,
                 lineTension: 0.1,
+                fill: false,
               },
               {
                 label: "OCBC",
@@ -117,6 +119,7 @@ class jpychart extends Component {
                 borderColor: ["rgba(191, 63, 63, 1)"],
                 borderWidth: 1,
                 lineTension: 0.1,
+                fill: false,
               },
             ],
           },

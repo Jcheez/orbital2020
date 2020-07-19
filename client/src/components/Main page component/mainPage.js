@@ -100,7 +100,7 @@ class mainpage extends Component {
       <div style={{ paddingLeft: "20px", paddingRight: "20px" }}>
         <h4>Welcome to Foreign Exchange Rate Monitoring System</h4>
         <hr></hr>
-        <h5>Your favourite currencies appear here</h5>
+        <h5>Favourite Currencies</h5>
         <p>
           Rates are updated every half-hourly. For more details, visit the
           latest rates tab.
