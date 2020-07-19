@@ -11,7 +11,7 @@ class fav_button extends Component {
     this.state = {
       text1: "Add to Favourites",
       text2: "Added to favourites",
-      text3: "outline-success",
+      text3: "success",
       text4: "outline-primary",
       favourites: [],
       added: "",

@@ -25,7 +25,7 @@ class Welcome extends Component {
           </p>
           <br></br>
           <p style={{ fontSize: "20px", marginLeft: "82px" }}>
-            With Ferms, you can:
+            With FERMS, you can:
             <ol>
               <li>
                 Monitor exchange rates live with our graphs (Data is updated

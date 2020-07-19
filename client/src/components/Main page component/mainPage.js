@@ -123,12 +123,12 @@ class mainpage extends Component {
         <div>{this.state.AED && <AED />}</div>
         <hr></hr>
         <p>
-          <b>Cant understand the rates presented?</b>
+          <b>Can't understand the rates presented?</b>
           <br></br>
           It is the amount of Singapore Dollar(s) you need to exchange for 1
           dollar of your desired foreign currency.
           <br></br>
-          In layman terms, the lower the rate, the more benefical it is for you.
+          In simple terms, the lower the rate, the more benefical it is for you.
         </p>
       </div>
     );
